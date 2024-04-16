@@ -1,0 +1,101 @@
+.giveaway {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  &Users {
+    z-index: 1;
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    border-radius: 12px;
+    border: 2px dashed #2E343F;
+    &List {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+      gap: 8px;
+      grid-gap: 8px;
+      align-self: stretch;
+    }
+    &Header {
+      display: flex;
+      padding: 8px 8px 0px 8px;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+      h2 {
+        color: #FFF;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 100% */
+      }
+      span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #7D8696;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 16px;
+        i {
+          &:before {
+            color: #7D8696;
+          }
+        }
+      }
+    }
+  }
+  &Header {
+    display: flex;
+    padding: 8px 8px 0 8px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    &Title {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+      h1 {
+        color: #FFD29C;
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 48px; /* 120% */
+        text-transform: uppercase;
+      }
+    }
+    &Timer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      h4 {
+        color: #7D8696;
+        text-align: right;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 16px;
+        text-transform: uppercase;
+      }
+      span {
+        color: #FFF;
+        text-align: right;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 24px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+.tabs {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

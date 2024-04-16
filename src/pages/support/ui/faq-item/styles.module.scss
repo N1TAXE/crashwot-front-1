@@ -1,0 +1,43 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+
+}
+
+.item {
+  padding: unset;
+  overflow: hidden;
+  transition: height ease .3s, background-color ease .3s;
+  border-radius: 12px;
+  background: #232831;
+  height: 64px;
+  &:hover {
+    background: #2a2f3a;
+  }
+  &.opened {
+    height: max-content;
+  }
+
+  &Head {
+    cursor: pointer;
+    padding: 24px;
+    color: #D5D9DF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &Content {
+    padding: 0 24px 24px 24px;
+    color: #acb2c0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+  }
+}

@@ -1,0 +1,134 @@
+.message {
+  display: flex;
+  gap: 16px;
+  &.green {
+    .messageAvatar {
+      &:before {
+        border: 2px solid rgba(90, 255, 166, 0.50);
+      }
+    }
+    .user-lvl {
+      color: #5AFFA6;
+      background: #334342;
+    }
+    .userLevel {
+      color: #5AFFA6;
+      background: #334342;
+    }
+  }
+  &.yellow {
+    .messageAvatar {
+      &:before {
+        border: 2px solid rgba(255, 209, 90, 0.50);
+      }
+    }
+    .userLevel {
+      color: #FFD15A;
+      background: #433F33;
+    }
+  }
+  &.white {
+    .messageAvatar {
+      &:before {
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+    }
+    .userLevel {
+      color: #5AFFA6;
+      background: #334342;
+    }
+  }
+  &Avatar {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    transition: opacity ease .3s;
+    &:hover {
+      opacity: .75;
+    }
+    img {
+      border-radius: 6px;
+      width: 48px;
+      height: 48px;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+  &Info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .userInfo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity ease .3s;
+      &:hover {
+        opacity: .75;
+      }
+      .nickname {
+        padding: 0;
+        &.color {
+          &0 {
+            color: #fff;
+          }
+          &1 {
+            color: #b3e8ff;
+          }
+        }
+      }
+      .userLevel {
+        display: flex;
+        padding: 2px 6px;
+        align-items: flex-start;
+        border-radius: 2px;
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 12px;
+        gap: 8px;
+      }
+    }
+  }
+  &Text {
+    align-self: stretch;
+    a {
+      color: #FFF;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+      transition: color ease .3s;
+    }
+    color: #A0A8B5;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+  }
+  .user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .date {
+      color: rgba(185, 185, 185, 0.50);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 16px;
+    }
+  }
+}

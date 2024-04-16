@@ -1,0 +1,41 @@
+.tab {
+  cursor: pointer;
+  opacity: .5;
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: opacity ease .3s, background-color ease .3s;
+
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+
+  background-color: #232831;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+
+  span {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+}

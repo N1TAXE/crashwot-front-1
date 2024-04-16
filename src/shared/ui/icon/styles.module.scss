@@ -1,0 +1,304 @@
+@font-face {
+  font-family: 'crashwot';
+  src:  url('./fonts/crashwot.eot?l5v52f');
+  src:  url('./fonts/crashwot.eot?l5v52f#iefix') format('embedded-opentype'),
+  url('./fonts/crashwot.ttf?l5v52f') format('truetype'),
+  url('./fonts/crashwot.woff?l5v52f') format('woff'),
+  url('./fonts/crashwot.svg?l5v52f#crashwot') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'crashwot' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:before {
+    transition: color ease .3s;
+    color: #fff;
+  }
+}
+
+.logout {
+  &.solid:before {
+    content: "\e91d";
+  }
+  &.stroke:before {
+    content: "\e91d";
+  }
+}
+
+.minus {
+  &.solid:before {
+    content: "\e91b";
+  }
+  &.stroke:before {
+    content: "\e91b";
+  }
+}
+
+.plus {
+  &.solid:before {
+    content: "\e91c";
+  }
+  &.stroke:before {
+    content: "\e91c";
+  }
+}
+
+.case {
+  &.solid:before {
+    content: "\e919";
+  }
+  &.stroke:before {
+    content: "\e919";
+  }
+}
+
+.crashgame {
+  &.solid:before {
+    content: "\e91a";
+  }
+  &.stroke:before {
+    content: "\e91a";
+  }
+}
+
+.lc {
+  &.solid:before {
+    content: "\e916";
+  }
+  &.stroke:before {
+    content: "\e916";
+  }
+}
+
+.vk {
+  &.solid:before {
+    content: "\e917";
+  }
+  &.stroke:before {
+    content: "\e917";
+  }
+}
+
+.wg {
+  &.solid:before {
+    content: "\e918";
+  }
+  &.stroke:before {
+    content: "\e918";
+  }
+}
+
+.add {
+  &.solid:before {
+    content: "\e900";
+  }
+  &.stroke:before {
+    content: "\e900";
+  }
+}
+
+.arrow {
+  &.solid:before {
+    content: "\e903";
+  }
+  &.stroke:before {
+    content: "\e903";
+  }
+}
+
+.pointer {
+  &.solid:before {
+    content: "\e901";
+  }
+  &.stroke:before {
+    content: "\e901";
+  }
+}
+
+.arrows {
+  &.solid:before {
+    content: "\e902";
+  }
+  &.stroke:before {
+    content: "\e902";
+  }
+}
+
+.bag {
+  &.solid:before {
+    content: "\e904";
+  }
+  &.stroke:before {
+    content: "\e904";
+  }
+}
+
+.chat {
+  &.solid:before {
+    content: "\e905";
+  }
+  &.stroke:before {
+    content: "\e905";
+  }
+}
+
+.check {
+  &.solid:before {
+    content: "\e906";
+  }
+  &.stroke:before {
+    content: "\e906";
+  }
+}
+
+.clock {
+  &.solid:before {
+    content: "\e907";
+  }
+  &.stroke:before {
+    content: "\e907";
+  }
+}
+
+.cog {
+  &.solid:before {
+    content: "\e908";
+  }
+  &.stroke:before {
+    content: "\e908";
+  }
+}
+
+.coins {
+  &.solid:before {
+    content: "\e909";
+  }
+  &.stroke:before {
+    content: "\e909";
+  }
+}
+
+.copy {
+  &.solid:before {
+    content: "\e90a";
+  }
+  &.stroke:before {
+    content: "\e90a";
+  }
+}
+
+.cross {
+  &.solid:before {
+    content: "\e90b";
+  }
+  &.stroke:before {
+    content: "\e90b";
+  }
+}
+
+.gamepad {
+  &.solid:before {
+    content: "\e90c";
+  }
+  &.stroke:before {
+    content: "\e90c";
+  }
+}
+
+.gift {
+  &.solid:before {
+    content: "\e90d";
+  }
+  &.stroke:before {
+    content: "\e90d";
+  }
+}
+
+.link {
+  &.solid:before {
+    content: "\e90e";
+  }
+  &.stroke:before {
+    content: "\e90e";
+  }
+}
+
+.lock {
+  &.solid:before {
+    content: "\e90f";
+  }
+  &.stroke:before {
+    content: "\e90f";
+  }
+}
+
+.question {
+  &.solid:before {
+    content: "\e910";
+  }
+  &.stroke:before {
+    content: "\e910";
+  }
+}
+
+.send {
+  &.solid:before {
+    content: "\e911";
+  }
+  &.stroke:before {
+    content: "\e911";
+  }
+}
+
+.shield {
+  &.solid:before {
+    content: "\e912";
+  }
+  &.stroke:before {
+    content: "\e912";
+  }
+}
+
+.trophy {
+  &.solid:before {
+    content: "\e913";
+  }
+  &.stroke:before {
+    content: "\e913";
+  }
+}
+
+.user {
+  &.solid:before {
+    content: "\e914";
+  }
+  &.stroke:before {
+    content: "\e914";
+  }
+}
+
+.withdraw {
+  &.solid:before {
+    content: "\e915";
+  }
+  &.stroke:before {
+    content: "\e915";
+  }
+}

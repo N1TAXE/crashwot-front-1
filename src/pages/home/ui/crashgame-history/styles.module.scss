@@ -1,0 +1,61 @@
+.card {
+  display: flex;
+  border-radius: var(--border-radius-cards);
+  background: #232831;
+  position: relative;
+  overflow: hidden;
+  transition: background-color ease 0.3s;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row;
+  padding: 8px;
+  &:after {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 15%;
+    background: linear-gradient(270deg, #232831 0%, rgba(35, 40, 49, 0.00) 100%);
+  }
+  .history__item {
+    display: flex;
+    padding: 4px 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+
+    &.color-- {
+      &purple {
+        background: rgba(148, 53, 150, 0.30);
+        color: #FB38FF;
+      }
+    }
+  }
+}
+
+.item {
+  display: flex;
+  padding: 4px 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.purple {
+  background: rgba(148, 53, 150, 0.30);
+  color: #FB38FF;
+}

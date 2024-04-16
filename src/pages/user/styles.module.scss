@@ -1,0 +1,9 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  &Top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}

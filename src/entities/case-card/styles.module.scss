@@ -1,0 +1,93 @@
+.caseItem {
+  position: relative;
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 12px;
+  background: rgba(35, 40, 49, 0.50);
+  transition: background-color ease .3s;
+  .badgeExp {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+    display: flex;
+    padding: 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px; /* 120% */
+    &:hover {
+      background: rgba(50, 57, 68, 0.5);
+    }
+    i {
+      width: 10px !important;
+      height: 10px !important;
+      &:before {
+        font-size: 10px;
+      }
+    }
+  }
+  &:hover {
+    background: rgba(45, 50, 61, 0.5);
+    .caseItemImage {
+      img {
+        scale: 1.1;
+      }
+    }
+  }
+  &Image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 226px;
+    height: 226px;
+    pointer-events: none;
+    img {
+      object-fit: cover;
+      min-width: 100%;
+      min-height: 100%;
+      scale: 1;
+      transition: scale ease .3s;
+    }
+  }
+  &Buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+    button {
+      flex: 1 1 0;
+      &:hover {
+        background: var(--color-green);
+      }
+    }
+    span {
+      flex: 1 1 0;
+      justify-content: space-between;
+      &:hover {
+        background: var(--color-dark);
+      }
+    }
+  }
+  &Info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-self: stretch;
+    h4 {
+      color: #D5D9DF;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-align: center;
+    }
+  }
+}

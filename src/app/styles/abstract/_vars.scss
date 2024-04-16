@@ -1,0 +1,51 @@
+$color-green-dark: desaturate(darken(#92E7A5, 52%), 52%);
+
+:root {
+  //Components
+  --chat-width: 360px;
+  --sidebar-width: 96px;
+  --border-radius-cards: 12px;
+  --tooltip-border-offset: 4px;
+
+  //Transitions
+  --transition: ease .3s;
+
+  //Colors
+  --color-green-light: #92E7A5;
+
+  --color-green: #3BC56A;
+  --color-green_hover: #49d978;
+  --color-green_press: #329a55;
+
+  --color-green-dark: #334342;
+  --color-green-dark_hover: #405251;
+  --color-green-dark_press: #2a3838;
+
+  --color-blue: #358BCA;
+  --color-blue_hover: #439bdc;
+  --color-blue_press: #2b70a1;
+
+  --color-red: #D62727;
+  --color-red_hover: #ea3c3c;
+  --color-red_press: #b62828;
+
+  --color-dark: #141922;
+  --color-dark_hover: #202634;
+  --color-dark_press: #141922;
+
+  --color-dark-light: #2D333D;
+  --color-dark-light_hover: #383e49;
+  --color-dark-light_press: #2D333D;
+
+  --color-orange: #CA7C35;
+  --color-orange_hover: #e08f49;
+  --color-orange_press: #a96529;
+
+  --color-orange-dark: #433D33;
+  --color-orange-dark_hover: #4f483e;
+  --color-orange-dark_press: #3a352b;
+
+  --color-gray: #5F6674;
+  --color-yellow: #FFD600;
+  --color-tooltip: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,213 @@
+.chat {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--chat-width);
+  height: 100%;
+  background-color: #232831;
+  transition: transform .2s ease-out 0s, right ease .3s;
+  &Header {
+    padding: 32px;
+    height: 96px;
+    border-bottom: solid 1px #141922;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &Info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    &Top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      text-transform: uppercase;
+      color: #D5D9DF;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+
+      i {
+        &:before {
+          color: #D5D9DF;
+        }
+      }
+    }
+  }
+  &Online {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #92E7A5;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    &:before {
+      content: '';
+      background: #92E7A5;
+      width: 6px;
+      height: 6px;
+      box-shadow: 0px 0px 8px 0px rgba(146, 231, 165, 0.50);
+      border-radius: 50%;
+      animation: status-online 2.5s infinite;
+    }
+    @keyframes status-online {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+  }
+  &RulesButton {
+    cursor: pointer;
+    display: flex;
+    padding: 4px 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    background: var(--color-green-dark);
+    border: none;
+
+    color: var(--color-green);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 160% */
+    text-transform: uppercase;
+    transition: background-color ease .3s;
+
+    &:hover {
+      background: var(--color-green-dark_hover);
+    }
+  }
+  &Content {
+    padding: 16px;
+    width: 100%;
+    height: calc(100% - 96px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+  }
+  &Bottom {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &Input {
+    position: relative;
+    input {
+      display: flex;
+      width: 100%;
+      padding: 16px 16px 16px 24px;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 6px;
+      background: #141922;
+      border: none;
+
+      color: #fff;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      outline: none;
+    }
+    button {
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      i {
+        &:before {
+          color: #717E95;
+        }
+      }
+    }
+  }
+  &Reply {
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    border-radius: 6px;
+    background: #141922;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 0 12px;
+    button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      outline: none;
+      border: none;
+
+      i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:before {
+          font-size: 12px;
+        }
+      }
+    }
+    &Info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      span {
+        &:nth-child(1) {
+          color: #FFF;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 16px; /* 133.333% */
+        }
+        &:nth-child(2) {
+          color: var(--color-green);
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 16px; /* 133.333% */
+        }
+      }
+    }
+  }
+}
+
+.messages {
+  &Wrap {
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    padding-right: 8px;
+  }
+  &List {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

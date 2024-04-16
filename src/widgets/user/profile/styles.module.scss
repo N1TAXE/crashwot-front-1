@@ -1,0 +1,64 @@
+.badge {
+  &Top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-yellow);
+    background: var(--color-orange-dark);
+    padding: 6px 8px;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+  }
+  &Id {
+    display: flex;
+    align-items: center;
+    color: white;
+    background: var(--color-dark-light);
+    padding: 6px 8px;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    gap: 4px;
+    cursor: pointer;
+    transition: background ease .3s;
+    &:hover {
+      background: var(--color-dark-light_hover);
+    }
+  }
+}
+.profile {
+  &User {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    padding: 16px;
+    background: #232831;
+    border-radius: 12px;
+    &Top {
+      flex: 1 1 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      &Info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1 1 0;
+        h4 {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 16px;
+        }
+        &Stats {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+      }
+    }
+  }
+}

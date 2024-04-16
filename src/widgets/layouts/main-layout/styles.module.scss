@@ -1,0 +1,6 @@
+.content {
+  margin-left: var(--sidebar-width);
+  margin-right: var(--chat-width);
+  flex: 1 1 0;
+  overflow-x: hidden;
+}

@@ -1,0 +1,48 @@
+body {
+  background-color: #141922;
+  color: #fff;
+  overflow-anchor: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #474F5E;
+  border-radius: 8px;
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background-color: #2F3540;
+  border-radius: 8px;
+}
+
+.container {
+  padding: 32px;
+  flex: 1 1 0;
+}
+
+main {
+  display: flex;
+  align-items: flex-start;
+}
+
+.wrapper {
+  margin-left: 96px;
+  display: flex;
+  flex-direction: column;
+  transition: margin ease .3s;
+
+  &.chat-opened {
+    margin-right: 360px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 12px;
+  background: #232831;
+  padding: 24px;
+}

@@ -1,0 +1,104 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: var(--border-radius-cards);
+  background-color: #232831;
+
+  overflow: hidden;
+  transition: background-color ease 0.3s;
+  width: 100%;
+
+  height: 304px;
+  background-image: url("./assets/crashgame__bg.png");
+  background-repeat: no-repeat;
+  padding: 32px;
+  position: relative;
+  &:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    background: linear-gradient(90deg, #1C212A 0%, rgba(28, 33, 42, 0.00) 16.30%, rgba(28, 33, 42, 0.00) 81.39%, #1C212A 100%);
+  }
+  .road {
+    position: absolute;
+    width: 100%;
+    height: 52px;
+    background-image: url("./assets/crashgame__road.png");
+    background-repeat: repeat-x;
+    bottom: 0;
+    left: 0;
+  }
+  .info {
+    z-index: 1;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+    .timer {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      span {
+        color: #FFF;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 32px;
+      }
+      color: #7D8696;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+    .stats {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        color: #B7C2D4;
+        text-align: right;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 16px;
+
+        i {
+          &:before {
+            color: #B7C2D4;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .crash-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      &__coef {
+        color: #FFF;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 32px;
+      }
+      color: #7D8696;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+  }
+}
