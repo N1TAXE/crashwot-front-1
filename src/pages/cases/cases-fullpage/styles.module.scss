@@ -3,7 +3,35 @@
   flex-direction: column;
   align-items: center;
   gap: 64px;
+  .badgeExp {
+    display: flex;
+    padding: 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px; /* 120% */
+    background: #1C212A;
+    &:hover {
+      background: rgba(50, 57, 68, 0.5);
+    }
+    i {
+      width: 10px !important;
+      height: 10px !important;
+      &:before {
+        font-size: 10px;
+      }
+    }
+  }
   .case {
+    &Title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
     &Items {
       width: 100%;
       display: flex;

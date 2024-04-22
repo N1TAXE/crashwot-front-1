@@ -12,7 +12,7 @@
 
 .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'crashwot' !important;
+  font-family: 'crashwot', serif;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -300,5 +300,14 @@
   }
   &.stroke:before {
     content: "\e915";
+  }
+}
+
+.star {
+  &.solid:before {
+    content: "\e909";
+  }
+  &.stroke:before {
+    content: "\e909";
   }
 }

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 
-export type IconTypes = 'pointer' | 'logout' | 'minus' | 'plus' | 'case' | 'crashgame' | 'lc' | 'vk' | 'wg' | 'add' | 'arrow' | 'arrows' | 'bag' | 'chat' | 'check' | 'clock' | 'cog' | 'coins' | 'copy' | 'cross' | 'gamepad' | 'gift' | 'link' | 'lock' | 'question' | 'send' | 'shield' | 'trophy' | 'user' | 'withdraw';
+export type IconTypes = 'star' | 'pointer' | 'logout' | 'minus' | 'plus' | 'case' | 'crashgame' | 'lc' | 'vk' | 'wg' | 'add' | 'arrow' | 'arrows' | 'bag' | 'chat' | 'check' | 'clock' | 'cog' | 'coins' | 'copy' | 'cross' | 'gamepad' | 'gift' | 'link' | 'lock' | 'question' | 'send' | 'shield' | 'trophy' | 'user' | 'withdraw';
 
 type IconProps = {
     icon: IconTypes;

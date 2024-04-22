@@ -7,7 +7,7 @@ import {Tooltip, ToolTipTypes} from "../../shared/ui/tooltip";
 export const CaseCard = () => {
     const tt: ToolTipTypes = {
         direction: 'top',
-        icon: "coins",
+        icon: "star",
         content: `Получай опыт за открытие кейсов!`,
     }
     return (

@@ -1,9 +1,10 @@
 import styles from './styles.module.scss'
 import {Button} from "../../../../shared/ui/button";
 import {NavLink} from "react-router-dom";
+import {PATHS} from "../../../../shared/lib/react-router";
 export const CrashGameGiveaway = () => {
     return (
-        <NavLink to='/' className={styles.card}>
+        <NavLink to={PATHS.giveaway} className={styles.card}>
             <div className={styles.text}>
                 <span>Бесплатный розыгрыш!</span>
                 <span>Успей принять участие!</span>

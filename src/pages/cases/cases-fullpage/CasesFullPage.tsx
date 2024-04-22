@@ -2,11 +2,23 @@ import styles from './styles.module.scss'
 import clsx from "clsx";
 import {Button} from "../../../shared/ui/button";
 import {ItemCard} from "../../../entities/item-card";
+import {Tooltip, ToolTipTypes} from "../../../shared/ui/tooltip";
 export const CasesFullPage = () => {
+    const tt: ToolTipTypes = {
+        direction: 'top',
+        icon: "star",
+        content: `Получай опыт за открытие кейсов!`,
+    }
     return (
         <div className={`container ${styles.content}`}>
             <div className={styles.caseWrapper}>
-                <h2>Название кейса</h2>
+                <div className={styles.caseTitle}>
+                    <h2>Название кейса</h2>
+                    <Button className={styles.badgeExp} size="small" color="dark">
+                        + 50
+                        <Tooltip {...tt} />
+                    </Button>
+                </div>
                 <div className={styles.caseInfoWrapper}>
                     <div className={styles.caseInfo}>
                         <div className={styles.caseImage}>

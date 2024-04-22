@@ -4,7 +4,7 @@ import {Icon} from "../../../shared/ui/icon";
 import { useCopyToClipboard } from 'usehooks-ts';
 import {toast} from "react-toastify";
 export const ProfileUser = () => {
-    const [copiedText, copy] = useCopyToClipboard();
+    const [, copy] = useCopyToClipboard();
     const handleCopy = (text: string) => () => {
         copy(text)
             .then(() => {
@@ -26,7 +26,7 @@ export const ProfileUser = () => {
                         </div>
                         <div onClick={handleCopy('273541')} className={styles.badgeId}>
                             ID #273541
-                            <Icon icon="copy" size="10"/>
+                            <Icon icon="copy" size={10}/>
                         </div>
                     </div>
                 </div>

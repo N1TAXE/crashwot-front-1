@@ -5,13 +5,13 @@ export type ToolTipTypes = {
     title?: string;
     icon?: IconTypes | null;
     content: string;
-    direction: string;
+    direction: 'top' | 'bottom';
 }
 export const Tooltip = ({
                             title = "",
                      icon = null,
                      content = "",
-                     direction = 'center',
+                     direction = 'top',
                  } : ToolTipTypes) => {
     return (
         <div className={styles.tooltipWrapper}>
