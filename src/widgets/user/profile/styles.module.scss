@@ -37,6 +37,7 @@
     padding: 16px;
     background: #232831;
     border-radius: 12px;
+    gap: 16px;
     &Top {
       flex: 1 1 0;
       display: flex;
@@ -57,6 +58,51 @@
           display: flex;
           align-items: center;
           gap: 8px;
+        }
+      }
+      &Image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        img {
+          width: 48px;
+          height: 48px;
+          border-radius: 6px;
+        }
+        i {
+          position: absolute;
+          background: #232831;
+          border-radius: 6px;
+          bottom: 0;
+          left: 0;
+          &:before {
+            color: #DF1B1A;
+          }
+        }
+      }
+    }
+    &Bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      &Withdraw {
+        display: flex;
+        gap: 16px;
+        width: 100%;
+        &State {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          font-size: 14px;
+          line-height: 24px;
+          padding: 8px 16px;
+          background: var(--color-green-dark);
+          border-radius: 6px;
         }
       }
     }

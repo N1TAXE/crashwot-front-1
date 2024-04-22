@@ -4,7 +4,7 @@ import type { ButtonHTMLAttributes, ElementType } from 'react';
 import styles from './styles.module.scss';
 import {Icon, IconTypes} from "../icon";
 
-type ButtonColorTypes = 'blue' | 'red' | 'orange' | 'dark' | 'dark-light' | 'green' | 'green-dark' | 'dashed' | 'lecta' | 'vk' | 'wg';
+type ButtonColorTypes = 'blue' | 'red' | 'orange' | 'dark' | 'dark-light' | 'green' | 'green-dark' | 'dashed' | 'lecta' | 'vk' | 'wg' ;
 
 interface ButtonProps<E extends ElementType = ElementType>
     extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -28,9 +28,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({children, as,
             <Element
                 className={clsx(
                     styles.btn,
-                    styles[color],
+                    color && styles[color],
                     styles[size],
-                    children ?? styles.icon,
+                    icon ? styles.icon : '',
                     className
                 )}
                 ref={ref}

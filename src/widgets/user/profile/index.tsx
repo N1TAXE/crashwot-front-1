@@ -30,7 +30,21 @@ export const ProfileUser = () => {
                         </div>
                     </div>
                 </div>
+                <div className={styles.profileUserTopImage}>
+                    <img src="https://avatars.steamstatic.com/892663c574bc2716786540cdbb4e585b1d23406a_full.jpg" alt=""/>
+                    <Icon icon="wg" size={12}/>
+                </div>
             </div>
+            <div className={styles.profileUserBottom}>
+                <div className={styles.profileUserBottomWithdraw}>
+                    <div className={styles.profileUserBottomWithdrawState}>
+                        5560.53
+                        <Icon icon="coins"/>
+                    </div>
+                    <Button color="blue" size="regular" icon="withdraw">Вывод</Button>
+                </div>
+            </div>
+            <Button color="green" size="medium" icon="add">Пополнение</Button>
         </div>
     );
 };
