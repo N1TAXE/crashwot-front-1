@@ -1,0 +1,111 @@
+.profile {
+  &Referrals{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    padding: 16px;
+    background: #232831;
+    border-radius: 12px;
+    gap: 16px;
+    justify-content: space-between;
+    &Header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &Info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        i {
+          background: #334342;
+          border-radius: 6px;
+          padding: 16px;
+          width: 12px;
+          height: 12px;
+          &:before {
+            font-size: 12px;
+            color: var(--color-green);
+          }
+        }
+        &Title {
+          display: flex;
+          flex-direction: column;
+          h4 {
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 600;
+            color: white;
+          }
+          p {
+            text-transform: uppercase;
+            font-size: 10px;
+            color: var(--color-gray);
+            line-height: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+      &Buttons {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    &Content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      &Link {
+        flex: 1 1 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        input {
+          pointer-events: none;
+        }
+      }
+      &Stats {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        &Item {
+          flex: 1 1 0;
+          display: flex;
+          align-items: center;
+          border-radius: 6px;
+          padding: 8px 8px 8px 12px;
+          justify-content: space-between;
+          background: linear-gradient(180deg, #2A2F38 0%, #353C49 100%);
+          &Info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            h4 {
+              font-size: 16px;
+              font-weight: 800;
+              line-height: 16px;
+              color: white;
+            }
+            p {
+              text-transform: uppercase;
+              font-size: 10px;
+              font-weight: 600;
+              line-height: 12px;
+              color: var(--color-gray);
+            }
+          }
+          i {
+            border-radius: 6px;
+            padding: 12px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .1) 100%);
+            border: 1px solid rgba(255, 255, 255, .1);
+            &:before {
+              color: #CED8EC;
+            }
+          }
+        }
+      }
+    }
+  }
+}

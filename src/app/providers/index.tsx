@@ -26,7 +26,7 @@ export function Provider() {
             <QueryClientProvider>
                 <BrowserRouter>
                     <ApolloProvider client={client}>
-                        <ToastContainer/>
+                        <ToastContainer theme="dark"/>
                         <Router />
                     </ApolloProvider>
                 </BrowserRouter>

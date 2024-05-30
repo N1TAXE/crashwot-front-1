@@ -123,7 +123,7 @@
         align-items: center;
         justify-content: space-between;
         p {
-          font-size: 12px;
+          font-size: 10px;
           line-height: 16px;
           font-weight: 400;
           color: var(--color-yellow);
@@ -132,6 +132,9 @@
           &:before {
             color: var(--color-yellow);
           }
+        }
+        button {
+          padding: 6px !important;
         }
       }
       &Level {

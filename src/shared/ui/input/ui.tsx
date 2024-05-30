@@ -1,19 +1,19 @@
 import styles from './styles.module.scss'
 import {Icon, IconTypes} from "../icon";
-import {HTMLInputTypeAttribute} from "react";
+import {FC, HTMLInputTypeAttribute, InputHTMLAttributes} from "react";
 
-type InputProps = {
-    label: string;
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     name: string;
     type: HTMLInputTypeAttribute;
+    label?: string;
     icon?: IconTypes;
 }
-export const Input = ({label, name, type, icon} : InputProps) => {
+export const Input: FC<InputProps> = ({label, name, type, icon, ...rest}) => {
     return (
         <div className={styles.inputItem}>
-            <label htmlFor={name}>{label}</label>
+            {label ? <label htmlFor={name}>{label}</label> : null}
             <div className={styles.inputWrapper}>
-                <input name={name} type={type} placeholder={label}/>
+                <input name={name} type={type} placeholder={label} {...rest}/>
                 {icon ? (<Icon icon={icon}/>) : null}
             </div>
         </div>
