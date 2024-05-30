@@ -30,14 +30,18 @@
         line-height: 12px;
         color: var(--color-gray);
       }
-    }
-    i {
-      border-radius: 6px;
-      padding: 12px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .1) 100%);
-      border: 1px solid rgba(255, 255, 255, .1);
-      &:before {
-        color: #CED8EC;
+      &Icon {
+        border-radius: 6px;
+        padding: 11px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .1) 100%);
+        border: 1px solid rgba(255, 255, 255, .1);
+        i {
+          width: 16px;
+          height: 16px;
+          &:before {
+            color: #CED8EC;
+          }
+        }
       }
     }
   }

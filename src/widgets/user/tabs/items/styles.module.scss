@@ -1,0 +1,7 @@
+.inventory {
+  display: grid;
+  gap: 8px;
+  grid-gap: 8px;
+  align-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+}

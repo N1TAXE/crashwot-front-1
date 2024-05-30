@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import {ProfileLevel, ProfileReferrals, ProfileUser} from "../../widgets/user";
+import {ProfileLevel, ProfileReferrals, ProfileTabs, ProfileUser} from "../../widgets/user";
 import ProfileStats from "../../widgets/user/stats";
 export const UserPage = () => {
     return (
@@ -10,6 +10,7 @@ export const UserPage = () => {
                 <ProfileReferrals/>
             </div>
             <ProfileStats/>
+            <ProfileTabs/>
         </div>
     )
 }

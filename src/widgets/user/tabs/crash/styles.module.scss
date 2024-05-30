@@ -1,0 +1,60 @@
+.crash {
+  &Bet {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    background: rgba(255, 255, 255, .1);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+  &Coef {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    &.green {
+      background: rgba(104, 203, 150, .3);
+      color: var(--color-green-light);
+    }
+    &.red {
+      background: rgba(203, 104, 104, .3);
+      color: var(--color-red-light);
+    }
+  }
+  &Result {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    &.green {
+      background: rgba(104, 203, 150, .3);
+      color: var(--color-green-light);
+      i {
+        &:before {
+          color: var(--color-green-light);
+        }
+      }
+    }
+    &.red {
+      background: rgba(203, 104, 104, .3);
+      color: var(--color-red-light);
+      i {
+        &:before {
+          color: var(--color-light);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.withdraw {
+  &Sum {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    background: rgba(255, 255, 255, .1);
+    color: var(--color-yellow);
+    padding: 8px 12px;
+    border-radius: 6px;
+    i {
+      &:before {
+        color: var(--color-yellow);
+      }
+    }
+  }
+  &Status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    background: rgba(255, 255, 255, .1);
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border-radius: 6px;
+    &.green {
+      color: var(--color-green-light);
+    }
+    &.red {
+      color: var(--color-red-light);
+    }
+  }
+}

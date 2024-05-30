@@ -46,3 +46,53 @@ main {
   background: #232831;
   padding: 24px;
 }
+
+table {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  gap: 16px;
+  thead {
+    display: flex;
+    align-items: center;
+    flex: 1 1 0;
+    padding: 0 16px;
+    tr {
+      display: flex;
+      align-items: center;
+      flex: 1 1 0;
+      th {
+        display: flex;
+        align-items: center;
+        flex: 1 1 0;
+        color: var(--color-gray);
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+  tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    tr {
+      display: flex;
+      align-items: center;
+      flex: 1 1 0;
+      background: #232831;
+      padding: 16px;
+      border-radius: 12px;
+      justify-content: space-between;
+      td {
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        flex: 1 1 0;
+      }
+    }
+  }
+}
