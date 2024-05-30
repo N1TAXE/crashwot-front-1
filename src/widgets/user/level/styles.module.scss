@@ -1,0 +1,170 @@
+.profile {
+  &Level {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    padding: 16px;
+    background: #232831;
+    border-radius: 12px;
+    gap: 16px;
+    &Header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &Info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        i {
+          background: #433F33;
+          border-radius: 6px;
+          padding: 16px;
+          width: 12px;
+          height: 12px;
+          &:before {
+            font-size: 12px;
+            color: var(--color-yellow);
+          }
+        }
+        &Title {
+          display: flex;
+          flex-direction: column;
+          h4 {
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 600;
+            color: white;
+          }
+          p {
+            text-transform: uppercase;
+            font-size: 10px;
+            color: var(--color-gray);
+            line-height: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+      &Buttons {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    &Content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      &Progress {
+        &Bar {
+          position: relative;
+          height: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #151A22;
+          border-radius: 8px;
+          &Progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFD600;
+            border-radius: 8px;
+          }
+        }
+        &Wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          justify-content: center;
+          padding: 12px;
+          border-radius: 6px;
+          border: dashed 1px rgba(255, 255, 255, 0.1);
+        }
+        &Header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          &Exp {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            p {
+              text-transform: uppercase;
+              font-size: 8px;
+              font-weight: 600;
+              line-height: 16px;
+              color: var(--color-gray);
+            }
+            span {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              p {
+                font-size: 12px;
+                font-weight: 800;
+                line-height: 16px;
+                color: white;
+              }
+              i {
+                &:before {
+                  color: var(--color-yellow);
+                }
+              }
+            }
+          }
+        }
+      }
+      &Warning {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p {
+          font-size: 12px;
+          line-height: 16px;
+          font-weight: 400;
+          color: var(--color-yellow);
+        }
+        i {
+          &:before {
+            color: var(--color-yellow);
+          }
+        }
+      }
+      &Level {
+        display: flex;
+        align-items: center;
+        border-radius: 6px;
+        padding: 8px 12px;
+        justify-content: space-between;
+        background: linear-gradient(180deg, #2A2F38 0%, #353C49 100%);
+        i {
+          &:before {
+            color: #CED8EC;
+          }
+        }
+        &Info {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          h4 {
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 600;
+            color: white;
+          }
+          p {
+            text-transform: uppercase;
+            color: var(--color-gray);
+            font-size: 10px;
+            line-height: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,16 +7,15 @@ import { ToastContainer } from 'react-toastify';
 import '../styles/style.scss'
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 import {WebSocketLink} from "@apollo/client/link/ws";
-import {SubscriptionClient} from "subscriptions-transport-ws";
 
-const link = new WebSocketLink(
-    new SubscriptionClient("ws://188.120.243.85:8000/api", {
-        reconnect: false
-    })
-);
+new WebSocketLink({
+    uri: "ws://188.120.243.85:8001",
+    options: {
+        reconnect: true
+    }
+});
 
 const client = new ApolloClient({
-    link,
     uri: 'http://188.120.243.85:8000/api',
     cache: new InMemoryCache()
 });

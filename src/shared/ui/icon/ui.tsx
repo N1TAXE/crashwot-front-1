@@ -13,8 +13,8 @@ type IconProps = {
 
 export const Icon = ({ icon, stroke, size }: IconProps) => {
     const style = {
-        fontSize: size ?? 16,
-        width: size ?? 16
+        fontSize: size ? size : null,
+        width: size ? size : null
     }
     return (
         <i className={clsx(styles.icon, styles[icon], stroke ? styles.stroke : styles.solid)} style={style} />

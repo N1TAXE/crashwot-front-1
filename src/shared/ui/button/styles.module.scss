@@ -119,7 +119,7 @@
 
 .small {
   &.icon {
-    padding: 8px;
+    padding: 10px;
     justify-content: space-between;
   }
   padding: 8px 12px;
@@ -128,9 +128,11 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
-  line-height: 16px;
+  line-height: 12px;
 
   i {
+    width: 12px;
+    height: 12px;
     &:before {
       font-size: 12px;
     }

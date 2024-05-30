@@ -1,40 +1,22 @@
 import styles from "./styles.module.scss";
 import {CaseCard} from "../../../entities/case-card";
-import React from "react";
+import React, {useEffect} from "react";
 import {LiveDropItem} from "../../../entities/livedrop-item";
-// import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import {GET_CASES} from "../../../shared/queries";
 
-// const GET_LOCATIONS = gql`
-// query GetCases {
-//   cases {
-//     Actived
-//     id
-//     mainImage
-//     oldprices
-//     price
-//     sorting
-//     category {
-//       id
-//       Actived
-//       showTitle
-//       sorting
-//       title
-//     }
-//     tankImage
-//     title
-//   }
-// }`;
+
 export const CasesListPage = () => {
-    // const { loading, error, data } = useQuery(GET_LOCATIONS);
-    //
-    // useEffect(() => {
-    //     if (!loading && data) {
-    //         console.log(data)
-    //     }
-    // }, [data, loading]);
-    //
-    // if (loading) return <p>Loading...</p>;
-    // if (error) return <p>Error : {error.message}</p>;
+    const { loading, error, data } = useQuery(GET_CASES);
+
+    useEffect(() => {
+        if (!loading && data) {
+            console.log(data)
+        }
+    }, [data, loading]);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error : {error.message}</p>;
 
     return (
         <React.Fragment>
