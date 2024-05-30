@@ -1,5 +1,6 @@
 import styles from './styles.module.scss'
 import {ProfileLevel, ProfileReferrals, ProfileUser} from "../../widgets/user";
+import ProfileStats from "../../widgets/user/stats";
 export const UserPage = () => {
     return (
         <div className={`container ${styles.profile}`}>
@@ -8,6 +9,7 @@ export const UserPage = () => {
                 <ProfileLevel/>
                 <ProfileReferrals/>
             </div>
+            <ProfileStats/>
         </div>
     )
 }
