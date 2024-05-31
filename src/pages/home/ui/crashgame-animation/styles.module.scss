@@ -23,6 +23,14 @@
     content: '';
     background: linear-gradient(90deg, #1C212A 0%, rgba(28, 33, 42, 0.00) 16.30%, rgba(28, 33, 42, 0.00) 81.39%, #1C212A 100%);
   }
+  .animation {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+  }
   .road {
     position: absolute;
     width: 100%;
