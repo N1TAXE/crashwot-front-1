@@ -1,9 +1,9 @@
 import styles from './styles.module.scss'
 import {Icon} from "../../../../shared/ui/icon";
 import {useAnimation} from "../../../../shared/lib/utils";
-import {useEffect, useRef} from "react";
+import {MutableRefObject, useEffect, useRef} from "react";
 export const CrashGameAnimation = () => {
-    const tankRef = useRef()
+    const tankRef = useRef<HTMLElement>(null)
     const [tank] = useAnimation({
         ref: tankRef,
         name: "tank",
@@ -39,7 +39,7 @@ export const CrashGameAnimation = () => {
                     </span>
                 </div>
             </div>
-            <div ref={tankRef} className={styles.animation}></div>
+            <div ref={tankRef as MutableRefObject<HTMLDivElement>} className={styles.animation}></div>
             <div className={styles.road}></div>
         </div>
     )

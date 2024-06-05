@@ -1,11 +1,11 @@
-import {MutableRefObject, useEffect, useState} from "react";
+import {MutableRefObject, RefObject, useEffect, useState} from "react";
 
 import { SpinePlayer } from "@esotericsoftware/spine-player";
 import {StringMap} from "@esotericsoftware/spine-core";
 import {Viewport} from "@esotericsoftware/spine-player/dist/Player";
 
 export interface AnimationTypes {
-    ref: MutableRefObject<HTMLElement>;
+    ref: MutableRefObject<HTMLElement> | RefObject<HTMLElement>;
     name: string;
     viewport: {
         x?: number;
@@ -30,8 +30,8 @@ export const useAnimation = ({ ref, name, viewport = {}, ...rest }: AnimationTyp
 
         const spine = new SpinePlayer(ref?.current, {
             preserveDrawingBuffer: false,
-            jsonUrl: `${import.meta.env.VITE_PUBLIC_URL}/static/animation/${name}/${name}.json`,
-            atlasUrl: `${import.meta.env.VITE_PUBLIC_URL}/static/animation/${name}/${name}.atlas`,
+            jsonUrl: `/static/animation/${name}/${name}.json`,
+            atlasUrl: `/static/animation/${name}/${name}.atlas`,
             backgroundColor: "#00000000",
             alpha: true,
             showControls: false,
