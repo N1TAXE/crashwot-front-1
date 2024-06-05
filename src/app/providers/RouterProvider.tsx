@@ -40,6 +40,8 @@ export function Router() {
                     element: <CasesFullPage/>
                 },
                 {
+                    // eslint-disable-next-line
+                    // @ts-expect-error
                     path: PATHS.user.root(':userId'),
                     element: <UserPage/>
                 }

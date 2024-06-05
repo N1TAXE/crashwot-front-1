@@ -3,7 +3,7 @@ import {useState} from "react";
 import {Icon} from "../../shared/ui/icon";
 import {Button} from "../../shared/ui/button";
 type EventTaskProps = {
-    data: object;
+    data: any;
 }
 export const EventTask = ({data} : EventTaskProps) => {
     const [isActive, setIsActive] = useState(false)

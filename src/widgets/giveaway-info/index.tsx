@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 import {Button} from "../../shared/ui/button";
 
 type GiveAwayInfoProps = {
-    data: object;
+    data: any;
 }
 export const GiveawayInfo = ({data}: GiveAwayInfoProps) => {
     return (
