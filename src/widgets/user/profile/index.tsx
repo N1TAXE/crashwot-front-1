@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 import {Button} from "../../../shared/ui/button";
 import {Icon} from "../../../shared/ui/icon";
 import { useCopyToClipboard } from 'usehooks-ts';
-import {toast} from "react-toastify";
+import toast from "react-hot-toast";
 export const ProfileUser = () => {
     const [, copy] = useCopyToClipboard();
     const handleCopy = (text: string) => () => {

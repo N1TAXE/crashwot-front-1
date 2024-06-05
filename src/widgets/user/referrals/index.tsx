@@ -3,7 +3,7 @@ import {Icon} from "../../../shared/ui/icon";
 import {Button} from "../../../shared/ui/button";
 import {Input} from "../../../shared/ui/input";
 import {useCopyToClipboard} from "usehooks-ts";
-import {toast} from "react-toastify";
+import toast from "react-hot-toast";
 
 export const ProfileReferrals = () => {
     const [, copy] = useCopyToClipboard();

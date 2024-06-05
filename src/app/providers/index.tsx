@@ -3,10 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { Router } from './RouterProvider';
 import {QueryClientProvider} from "./QueryClientProvider.tsx";
 import {FullPageError} from "../../shared/ui/full-page-error";
-import { ToastContainer } from 'react-toastify';
 import '../styles/style.scss'
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 import {WebSocketLink} from "@apollo/client/link/ws";
+import {Toaster} from "react-hot-toast";
 
 new WebSocketLink({
     uri: "ws://188.120.243.85:8001",
@@ -26,7 +26,7 @@ export function Provider() {
             <QueryClientProvider>
                 <BrowserRouter>
                     <ApolloProvider client={client}>
-                        <ToastContainer theme="dark"/>
+                        <Toaster position="top-center"/>
                         <Router />
                     </ApolloProvider>
                 </BrowserRouter>
