@@ -4,7 +4,9 @@ import {Button} from "../../../shared/ui/button";
 import {ItemCard} from "../../../entities/item-card";
 import Tooltip from "rc-tooltip";
 import {Icon} from "../../../shared/ui/icon";
-const tt: {placement: string; trigger: []; overlay: string} = {
+import {TooltipProps} from "rc-tooltip/lib/Tooltip";
+
+const tt: Omit<TooltipProps, 'children'> = {
     placement: 'top',
     trigger: ["hover"],
     overlay: `Получай опыт за открытие кейсов!`,

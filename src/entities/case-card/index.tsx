@@ -4,8 +4,9 @@ import {Button} from "../../shared/ui/button";
 import {NavLink} from "react-router-dom";
 import Tooltip from "rc-tooltip"
 import {Icon} from "../../shared/ui/icon";
+import {TooltipProps} from "rc-tooltip/lib/Tooltip";
 
-const tt: {placement: string; trigger: []; overlay: string} = {
+const tt: Omit<TooltipProps, 'children'> = {
     placement: 'top',
     trigger: ["hover"],
     overlay: `Получай опыт за открытие кейсов!`,
