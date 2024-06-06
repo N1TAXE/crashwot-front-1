@@ -1,1 +1,0 @@
-export {Tooltip, type ToolTipTypes} from './ui.tsx'

@@ -2,20 +2,24 @@ import {PATHS} from "../../shared/lib/react-router";
 import styles from "./styles.module.scss";
 import {Button} from "../../shared/ui/button";
 import {NavLink} from "react-router-dom";
-import {Tooltip, ToolTipTypes} from "../../shared/ui/tooltip";
+import Tooltip from "rc-tooltip"
+import {Icon} from "../../shared/ui/icon";
+
+const tt: {placement: string; trigger: []; overlay: string} = {
+    placement: 'top',
+    trigger: ["hover"],
+    overlay: `Получай опыт за открытие кейсов!`,
+}
 
 export const CaseCard = () => {
-    const tt: ToolTipTypes = {
-        direction: 'top',
-        icon: "star",
-        content: `Получай опыт за открытие кейсов!`,
-    }
     return (
         <NavLink to={PATHS.cases.root('test')} className={styles.caseItem}>
-            <Button className={styles.badgeExp} size="small" color="dark">
-                + 50
-                <Tooltip {...tt} />
-            </Button>
+            <Tooltip {...tt}>
+                <Button className={styles.badgeExp} size="small" color="dark">
+                    + 50
+                    <Icon icon="coins"/>
+                </Button>
+            </Tooltip>
             <div className={styles.caseItemImage}>
                 <img src="https://ggdrop.in/public/storage/cases/HVjuHCrgO8Vx8HpCoL5Ni0wfCkFUWJnVymVfCvzX.png" alt=""/>
             </div>
