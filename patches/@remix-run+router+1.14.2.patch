@@ -1,0 +1,13 @@
+diff --git a/node_modules/@remix-run/router/history.ts b/node_modules/@remix-run/router/history.ts
+index ad4bd44..d355dd3 100644
+--- a/node_modules/@remix-run/router/history.ts
++++ b/node_modules/@remix-run/router/history.ts
+@@ -374,7 +374,7 @@ export function createBrowserHistory(
+     );
+   }
+ 
+-  function createBrowserHref(window: Window, to: To) {
++  function createBrowserHref(_window: Window, to: To) {
+     return typeof to === "string" ? to : createPath(to);
+   }
+ 
