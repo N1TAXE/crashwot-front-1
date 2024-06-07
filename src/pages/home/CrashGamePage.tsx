@@ -15,7 +15,6 @@ export function CrashGamePage() {
             <div className="container">
                 <section className={styles.section}>
                     <div className={styles.sectionLeft}>
-                        <button onClick={handle}>Test</button>
                         <CrashGameInputs/>
                         <CrashGamePromoBanner/>
                         <CrashGameGiveaway/>
