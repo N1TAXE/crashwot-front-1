@@ -3,22 +3,10 @@ import styles from './styles.module.scss'
 import {CrashGameAnimation} from "./ui/crashgame-animation";
 import {CrashGameHistory} from "./ui/crashgame-history";
 import {CrashGamePlayers} from "./ui/crashgame-players";
-import React from "react";
 import { Helmet } from "react-helmet"
-// import useWebSocket, { ReadyState } from 'react-use-websocket';
-export function CrashGamePage() {
-    // const [socketUrl, setSocketUrl] = useState('ws://188.120.243.85:8000/api');
-    //
-    // const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-    //
-    // const connectionStatus = {
-    //     [ReadyState.CONNECTING]: 'Connecting',
-    //     [ReadyState.OPEN]: 'Open',
-    //     [ReadyState.CLOSING]: 'Closing',
-    //     [ReadyState.CLOSED]: 'Closed',
-    //     [ReadyState.UNINSTANTIATED]: 'Uninstantiated',
-    // }[readyState];
+import React from 'react'
 
+export function CrashGamePage() {
     return (
         <React.Fragment>
             <Helmet>
@@ -27,6 +15,7 @@ export function CrashGamePage() {
             <div className="container">
                 <section className={styles.section}>
                     <div className={styles.sectionLeft}>
+                        <button onClick={handle}>Test</button>
                         <CrashGameInputs/>
                         <CrashGamePromoBanner/>
                         <CrashGameGiveaway/>

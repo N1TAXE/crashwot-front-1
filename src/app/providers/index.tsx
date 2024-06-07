@@ -4,21 +4,9 @@ import { Router } from './RouterProvider';
 import {QueryClientProvider} from "./QueryClientProvider.tsx";
 import {FullPageError} from "../../shared/ui/full-page-error";
 import '../styles/style.scss'
-import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
-import {WebSocketLink} from "@apollo/client/link/ws";
+import {ApolloProvider} from '@apollo/client';
 import {Toaster} from "react-hot-toast";
-
-new WebSocketLink({
-    uri: "ws://188.120.243.85:8001",
-    options: {
-        reconnect: true
-    }
-});
-
-const client = new ApolloClient({
-    uri: 'http://188.120.243.85:8000/api',
-    cache: new InMemoryCache()
-});
+import client from "../../shared/lib/apolloClient.ts";
 
 export function Provider() {
     return (
