@@ -1,0 +1,80 @@
+CSGO.png
+size:8192,4096
+filter:Linear,Linear
+pma:true
+300px-Csgo_weapon_smokegrenade
+bounds:4101,1598,80,163
+offsets:115,29,300,225
+body0000
+bounds:3750,203,248,320
+offsets:4,2,255,323
+exp2/1
+bounds:5421,2109,274,257
+offsets:229,171,701,700
+exp2/10
+bounds:2,26,1163,678
+offsets:115,499,1401,1400
+exp2/2
+bounds:3363,148,385,375
+offsets:177,155,701,700
+exp2/3
+bounds:2869,68,492,455
+offsets:107,121,701,700
+exp2/4
+bounds:1167,105,599,429
+offsets:61,118,701,700
+rotate:90
+exp2/5
+bounds:1598,2,671,577
+offsets:30,33,701,700
+exp2/6
+bounds:4389,2131,1030,710
+offsets:186,349,1401,1400
+exp2/7
+bounds:2988,1420,1111,711
+offsets:197,422,1401,1400
+exp2/8
+bounds:3044,2133,1139,680
+offsets:156,447,1401,1400
+exp2/9
+bounds:6754,2431,1205,748
+offsets:120,426,1401,1400
+head000
+bounds:7961,2472,215,231
+offsets:4,4,221,239
+head000glass
+bounds:4185,2329,113,107
+offsets:1,5,115,115
+hend000left
+bounds:4185,2438,138,375
+offsets:0,1,138,376
+hend000right
+bounds:4101,1763,137,368
+offsets:4,0,141,368
+kjgkgjk
+bounds:2,706,1601,3365
+offsets:130,311,4096,4096
+leg000left
+bounds:7961,2705,200,474
+leg000right
+bounds:5421,2368,200,473
+smoke/10x/222ъ@10x
+bounds:2271,36,596,543
+smoke/10x/Ресурс 2@10x
+bounds:2988,525,893,1037
+rotate:90
+smoke/10x/Ресурс 3@10x
+bounds:5650,2861,1102,1210
+smoke/10x/Ресурс 4@10x
+bounds:4389,2843,1228,1259
+rotate:90
+smoke/10x/Ресурс 5@10x
+bounds:3044,2815,1343,1256
+smoke/10x/Ресурс 6@10x
+bounds:1605,1379,1381,1367
+smoke/10x/Ресурс 7@10x
+bounds:1605,2748,1437,1323
+smoke/10x/Ресурс 8@10x
+bounds:6754,3181,1407,890
+smoke/10x/Ресурс 9@10x
+bounds:1605,581,1301,796
