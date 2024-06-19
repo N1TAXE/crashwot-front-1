@@ -19,8 +19,8 @@
     right: 32px;
   }
   &Header {
-    padding: 32px;
-    height: 96px;
+    padding: 20px 32px;
+    height: 80px;
     border-bottom: solid 1px #141922;
     width: 100%;
     display: flex;
@@ -30,7 +30,6 @@
   &Info {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     &Top {
       display: flex;
       align-items: center;
