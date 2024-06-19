@@ -1,8 +1,6 @@
 import {MutableRefObject, RefObject, useEffect, useState} from "react";
-
-import { SpinePlayer } from "@esotericsoftware/spine-player";
-import {StringMap} from "@esotericsoftware/spine-core";
-import {SpinePlayerConfig, Viewport} from "@esotericsoftware/spine-player/dist/Player";
+import {SpinePlayerConfig} from "@esotericsoftware/spine-player/dist/Player";
+import {SpinePlayer} from "@esotericsoftware/spine-player";
 
 export interface AnimationTypes {
     ref: MutableRefObject<HTMLElement> | RefObject<HTMLElement>;

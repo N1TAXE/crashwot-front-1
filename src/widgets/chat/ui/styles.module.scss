@@ -1,7 +1,7 @@
 .chat {
   position: fixed;
   top: 0;
-  right: 0;
+  right: calc(var(--chat-width) * -1);;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,14 @@
   height: 100%;
   background-color: #232831;
   transition: transform .2s ease-out 0s, right ease .3s;
+  &.opened {
+    right: 0;
+  }
+  &Button {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+  }
   &Header {
     padding: 32px;
     height: 96px;

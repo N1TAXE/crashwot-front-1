@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 import {Icon} from "../../../../shared/ui/icon";
-import {useAnimation} from "../../../../shared/lib/utils";
-import {MutableRefObject, useEffect, useRef} from "react";
+import {useAnimation, useTimer} from "../../../../shared/lib/hooks";
+import {MutableRefObject, useRef} from "react";
 export const CrashGameAnimation = () => {
     const ctRef = useRef<HTMLElement>(null)
     const [ct] = useAnimation({
@@ -23,12 +23,18 @@ export const CrashGameAnimation = () => {
         ct?.setAnimation("Run")
         console.log(ct)
     }
+
+    const [count] =
+        useTimer({
+            initialTime: 10,
+            decimal: 2,
+        })
     return (
         <div className={styles.card}>
             <div className={styles.info}>
                 <div className={styles.timer}>
                     <span onClick={setAnim}>
-                        13.53 сек
+                        {count} сек
                     </span>
                     До следующей игры
                 </div>

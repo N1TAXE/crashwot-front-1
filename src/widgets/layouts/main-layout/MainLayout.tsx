@@ -3,13 +3,15 @@ import {Sidebar} from "../../sidebar";
 import styles from './styles.module.scss'
 import {Header} from "../../header";
 import {Chat} from "../../chat";
+import {useChatStore} from "../../../app/stores/gobalStore.tsx";
 
 export function MainLayout() {
+    const { chatData } = useChatStore();
     return (
         <main>
             <Sidebar/>
             <Chat/>
-            <section className={styles.content}>
+            <section className={`${styles.content}${chatData.isOpened ? ` ${styles.chatOpened}` : ''}`}>
                 <Header/>
                 <Outlet />
             </section>

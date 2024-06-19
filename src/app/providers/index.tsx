@@ -7,8 +7,10 @@ import '../styles/style.scss'
 import {ApolloProvider} from '@apollo/client';
 import {Toaster} from "react-hot-toast";
 import client from "../../shared/lib/apolloClient.ts";
+import {useInitializeChatData} from "../../shared/lib/initialize";
 
 export function Provider() {
+    useInitializeChatData();
     return (
         <ErrorBoundary FallbackComponent={FullPageError}>
             <QueryClientProvider>

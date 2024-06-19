@@ -9,7 +9,6 @@ import {EventPage} from "../../pages/event";
 import {SupportPage} from "../../pages/support";
 import {UserPage} from "../../pages/user";
 
-
 export function Router() {
     return useRoutes([
         {
