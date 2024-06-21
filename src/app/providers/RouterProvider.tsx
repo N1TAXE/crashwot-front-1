@@ -47,6 +47,6 @@ export function Router() {
             ],
         },
         { path: '404', element: <Page404/> },
-        { path: '*', element: <Navigate to={PATHS.page404} replace /> },
+        { path: '*', element: <Navigate to={PATHS.root} replace /> },
     ]);
 }
