@@ -1,9 +1,9 @@
 import styles from "./styles.module.scss";
 import {CaseCard} from "../../../entities/case-card";
 import React, {useEffect} from "react";
-import {LiveDropItem} from "../../../entities/livedrop-item";
 import { useQuery } from '@apollo/client';
 import {GET_CASES} from "../../../shared/queries";
+import {LiveDrop} from "../../../widgets/livedrop";
 
 
 export const CasesListPage = () => {
@@ -20,13 +20,7 @@ export const CasesListPage = () => {
 
     return (
         <React.Fragment>
-            <div className={styles.livedropWrapper}>
-                <div className={styles.livedrop}>
-                    {Array.from({length: 20}, (_, i) => (
-                        <LiveDropItem key={i}/>
-                    ))}
-                </div>
-            </div>
+            <LiveDrop/>
             <div className="container">
                 <section className={styles.section}>
                     <div className={styles.categoryItem}>

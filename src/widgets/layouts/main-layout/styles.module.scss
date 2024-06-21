@@ -2,6 +2,9 @@
   &.chatOpened {
     margin-right: var(--chat-width);
   }
+
+  display: flex;
+  flex-direction: column;
   margin-left: var(--sidebar-width);
   flex: 1 1 0;
   overflow-x: hidden;

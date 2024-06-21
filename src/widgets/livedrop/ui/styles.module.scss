@@ -1,0 +1,66 @@
+.livedrop {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  padding: 32px 32px 0 32px;
+  align-self: stretch;
+  overflow: hidden;
+  gap: 16px;
+  flex: 1 1 100%;
+  &List {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    flex: 1 1 100%;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  &Buttons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      position: absolute;
+      rotate: 90deg;
+      font-size: 8px;
+      line-height: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -36px;
+      opacity: .5;
+    }
+    &Inner {
+      display: flex;
+      flex-direction: column;
+      padding: 8px;
+      border-radius: 12px;
+      background: rgba(35, 40, 49, 0.5);
+      &Button {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        background: unset;
+        border: unset;
+        outline: unset;
+        cursor: pointer;
+        transition: background-color ease .3s;
+        border-radius: 6px;
+        overflow: hidden;
+        i {
+          &:before {
+            color: #fff;
+          }
+        }
+        &.active {
+          background: var(--color-green);
+          i {
+            &:before {
+              color: var(--color-dark);
+            }
+          }
+        }
+      }
+    }
+  }
+}

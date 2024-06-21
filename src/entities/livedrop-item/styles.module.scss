@@ -1,116 +1,197 @@
 .item {
-  height: 56px;
-  border-radius: 4px;
-  &:hover {
-    .itemContent {
-      transform: translateY(-100%);
-    }
-  }
-  &Prize {
-    width: 48px;
-    height: 48px;
+  position: relative;
+  display: flex;
+  padding: 16px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  background: #1C212A;
+  flex: 1 1 100%;
+  overflow: hidden;
+  height: 100%;
+  min-width: 120px;
+  &:before {
+    content: '';
     position: absolute;
-    left: 16px;
-    top: 4px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+    transition: opacity ease .3s;
   }
-  &Content {
-    display: flex;
-    min-width: 80px;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    position: relative;
-    cursor: pointer;
-    transition: transform ease .3s;
-    height: 56px;
-  }
-  &.blue {
-    background: radial-gradient(90.22% 100% at 50% 0%, rgba(0, 194, 255, 0.20) 0%, rgba(0, 194, 255, 0.00) 100%), #1C212A;
-  }
-  svg {
-    width: 45px;
-    height: 48px;
-    position: absolute;
-    left: 50%;
-    top: 4px;
-    transform: translateX(-50%);
-  }
-  &Info {
-    display: flex;
-    padding: 8px 8px;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 24px;
-    flex: 1 0 0;
 
-    &Drop {
-      position: relative;
-      flex-direction: column;
-      display: flex;
-      justify-content: flex-end;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      padding: 8px;
-      span {
-        width: 64px;
-        white-space: nowrap;
-        overflow: hidden;
-        color: #D5D9DF;
-        text-overflow: ellipsis;
-        font-size: 8px;
-        font-weight: 600;
-        line-height: 8px; /* 100% */
-      }
-      &Avatar {
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        top: 8px;
-        left: 8px;
-        z-index: 1;
-        border-radius: 50%;
-      }
-      &Case {
-        position: absolute;
-        width: 56px;
-        height: 56px;
-        top: 55%;
-        left: 80%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
+  &.special {
+    &:before {
+      background: radial-gradient(90.22% 100% at 50% 0%, rgb(255, 138, 0) 0%, rgba(0, 194, 255, 0.00) 100%), #1C212A;
+    }
+    &:hover {
+      &:before {
+        opacity: .5;
       }
     }
-    &Price {
+  }
+  &.covert {
+    &:before {
+      background: radial-gradient(90.22% 100% at 50% 0%, rgb(255, 0, 0) 0%, rgba(0, 194, 255, 0.00) 100%), #1C212A;
+    }
+    &:hover {
+      &:before {
+        opacity: .5;
+      }
+    }
+  }
+  &.classfield {
+    &:before {
+      background: radial-gradient(90.22% 100% at 50% 0%, rgb(189, 0, 255) 0%, rgba(0, 194, 255, 0.00) 100%), #1C212A;
+    }
+    &:hover {
+      &:before {
+        opacity: .5;
+      }
+    }
+  }
+  &.restricted {
+    &:before {
+      background: radial-gradient(90.22% 100% at 50% 0%, rgb(136, 71, 255) 0%, rgba(0, 194, 255, 0.00) 100%), #1C212A;
+    }
+    &:hover {
+      &:before {
+        opacity: .5;
+      }
+    }
+  }
+  &.rate {
+    &:before {
+      background: radial-gradient(90.22% 100% at 50% 0%, rgb(75, 105, 255) 0%, rgba(0, 194, 255, 0.00) 100%), #1C212A;
+    }
+    &:hover {
+      &:before {
+        opacity: .5;
+      }
+    }
+  }
+  &.uncommon {
+    &:before {
+      background: radial-gradient(90.22% 100% at 50% 0%, rgb(94, 152, 217) 0%, rgba(0, 194, 255, 0.00) 100%), #1C212A;
+    }
+    &:hover {
+      &:before {
+        opacity: .5;
+      }
+    }
+  }
+  &.common {
+    &:before {
+      background: radial-gradient(90.22% 100% at 50% 0%, rgb(176, 195, 217) 0%, rgba(0, 194, 255, 0.00) 100%), #1C212A;
+    }
+    &:hover {
+      &:before {
+        opacity: .5;
+      }
+    }
+  }
+
+  &:hover {
+    .itemImages {
+      img {
+        transform: translateY(-150%);
+        &:last-child {
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .itemInfo {
+      transform: translateY(-100%);
+      &:last-child {
+        transform: translateY(0%);
+      }
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &Images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      position: absolute;
+      width: 104px;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform ease .3s;
+      &:last-child {
+        transform: translateY(50%);
+        top: 55%;
+        right: -8px;
+      }
+    }
+  }
+
+  &Info {
+    &:last-child {
+      transform: translateY(100%);
+    }
+    position: absolute;
+    padding: 16px;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: transform ease .3s;
+
+    span {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .title {
+      font-size: 12px;
+      line-height: 16px;
+      color: #D5D9DF;
+      font-weight: 500;
+    }
+    .case {
+      font-size: 12px;
+      line-height: 16px;
+      color: #fff;
+      font-weight: 500;
+    }
+    .price {
       display: flex;
-      justify-content: flex-start;
       align-items: center;
-      gap: 2px;
-      align-self: stretch;
+      gap: 4px;
+      font-size: 12px;
+      line-height: 16px;
       color: var(--color-yellow);
-      font-size: 8px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 8px; /* 100% */
+      font-weight: 500;
       i {
-        width: 8px;
-        height: 8px;
         &:before {
-          font-size: 8px;
           color: var(--color-yellow);
         }
       }
     }
-    span {
-      width: 64px;
-      white-space: nowrap;
-      overflow: hidden;
-      color: #D5D9DF;
-      text-overflow: ellipsis;
-      font-size: 8px;
-      font-weight: 600;
-      line-height: 8px; /* 100% */
+    .date {
+      font-size: 10px;
+      line-height: 8px;
+      color: #fff;
+      opacity: .5;
     }
   }
 }
