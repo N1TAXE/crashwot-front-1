@@ -1,13 +1,17 @@
 import {useChatStore} from "../../../app/stores/gobalStore.tsx";
 import {useEffect} from "react";
+import {useWindowDimensions} from "../hooks";
 
 export const useInitializeChatData = () => {
     const { chatData, setChatData } = useChatStore();
+    const [ , width ] = useWindowDimensions();
 
     useEffect(() => {
         const savedData = localStorage.getItem('chat');
         if (savedData) {
-            setChatData(JSON.parse(savedData));
+            if (width > 1280) {
+                setChatData(JSON.parse(savedData));
+            }
         }
     }, [setChatData]);
 

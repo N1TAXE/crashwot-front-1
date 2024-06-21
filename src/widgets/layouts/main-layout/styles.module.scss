@@ -1,6 +1,8 @@
 .content {
-  &.chatOpened {
-    margin-right: var(--chat-width);
+  @media screen and (min-width: 1281px) {
+    &.chatOpened {
+      margin-right: var(--chat-width);
+    }
   }
 
   display: flex;

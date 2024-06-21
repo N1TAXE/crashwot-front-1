@@ -4,10 +4,6 @@ import {Button} from "../../../shared/ui/button";
 import {ChatMessage} from "./chat-message";
 import {useChatStore} from "../../../app/stores/gobalStore.tsx";
 import {useEffect, useState} from "react";
-export interface ChatTypes {
-    isOpened: boolean
-}
-
 export const Chat = () => {
     const { chatData, setChatData } = useChatStore();
     const [state, setState] = useState<boolean>(false);

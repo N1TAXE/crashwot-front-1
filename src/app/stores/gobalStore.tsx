@@ -7,7 +7,7 @@ type ModalStore = {
     clearModal: () => void
 }
 
-type GlobalStore = {
+type ChatStore = {
     chatData: ChatTypes
     setChatData: (data: ChatTypes) => void
 }
@@ -18,7 +18,7 @@ export const useModalStore = create<ModalStore>()((set) => ({
     clearModal: () => set({ modal: null }),
 }))
 
-export const useChatStore = create<GlobalStore>()((set) => ({
+export const useChatStore = create<ChatStore>()((set) => ({
     chatData: { isOpened: false },
     setChatData: (data) => set({chatData: data})
 }))
