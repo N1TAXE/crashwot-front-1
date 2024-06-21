@@ -1,0 +1,58 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 999;
+  padding: 64px;
+  @media screen and (max-width: 720px) {
+    width: 100%;
+    padding: 24px;
+  }
+
+  &Content {
+    position: relative;
+    width: 560px;
+    background-color: #1C212A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    padding: 32px;
+    border-radius: 12px;
+    @media screen and (max-width: 720px) {
+      width: 100%;
+    }
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  i {
+    &:before {
+      color: #8C8CA9;
+      transition: color ease .3s;
+    }
+  }
+  &:hover {
+    i {
+      &:before {
+        color: white;
+      }
+    }
+  }
+}

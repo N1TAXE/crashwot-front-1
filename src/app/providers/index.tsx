@@ -8,6 +8,7 @@ import {ApolloProvider} from '@apollo/client';
 import {Toaster} from "react-hot-toast";
 import client from "../../shared/lib/apolloClient.ts";
 import {useInitializeChatData} from "../../shared/lib/initialize";
+import {Modal} from "../../shared/ui/modal";
 
 export function Provider() {
     useInitializeChatData();
@@ -16,6 +17,7 @@ export function Provider() {
             <QueryClientProvider>
                 <BrowserRouter>
                     <ApolloProvider client={client}>
+                        <Modal />
                         <Toaster position="top-center"/>
                         <Router />
                     </ApolloProvider>

@@ -1,22 +1,35 @@
 import { create } from 'zustand'
-import {ChatTypes} from "../../widgets/chat/ui";
+import ModalUserSettings from "../../entities/modals/ModalUserSettings.tsx";
+import {ReactNode} from "react";
 
 type ModalStore = {
     modal: string | null
-    setModal: (name: string | null) => void
-    clearModal: () => void
+    component: ReactNode | null
+    openModal: (name: string) => void
+    closeModal: () => void
 }
 
 type ChatStore = {
-    chatData: ChatTypes
-    setChatData: (data: ChatTypes) => void
+    chatData: {isOpened: boolean}
+    setChatData: (data: {isOpened: boolean}) => void
 }
+
+const getComponentByName = (name: string) => {
+    switch (name) {
+        case 'user_settings': return <ModalUserSettings />;
+        default: return null;
+    }
+};
 
 export const useModalStore = create<ModalStore>()((set) => ({
     modal: null,
-    setModal: (name) => set({ modal: name }),
-    clearModal: () => set({ modal: null }),
-}))
+    component: null,
+    openModal: (name: string) => set({
+        modal: name,
+        component: getComponentByName(name)
+    }),
+    closeModal: () => set({ modal: null, component: null }),
+}));
 
 export const useChatStore = create<ChatStore>()((set) => ({
     chatData: { isOpened: false },

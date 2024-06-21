@@ -3,8 +3,10 @@ import {Button} from "../../../shared/ui/button";
 import {Icon} from "../../../shared/ui/icon";
 import { useCopyToClipboard } from 'usehooks-ts';
 import toast from "react-hot-toast";
+import {useModalStore} from "../../../app/stores/gobalStore.tsx";
 export const ProfileUser = () => {
     const [, copy] = useCopyToClipboard();
+    const { openModal } = useModalStore();
     const handleCopy = (text: string) => () => {
         copy(text)
             .then(() => {
@@ -17,7 +19,7 @@ export const ProfileUser = () => {
     return (
         <div className={styles.profileUser}>
             <div className={styles.profileUserTop}>
-                <Button color="dark" icon="cog"/>
+                <Button onClick={() => openModal('user_settings')} color="dark" icon="cog"/>
                 <div className={styles.profileUserTopInfo}>
                     <h4>Константин Константиновский</h4>
                     <div className={styles.profileUserTopInfoStats}>
