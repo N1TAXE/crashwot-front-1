@@ -14,8 +14,9 @@
   @media screen and (max-width: 1280px) {
     left: 0;
     top: 100%;
-    width: 100%;
-    z-index: 11;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 13;
     &.opened {
       top: 0;
     }
@@ -28,6 +29,10 @@
     position: fixed;
     bottom: 32px;
     right: 32px;
+    width: 40px;
+    i {
+      width: 16px;
+    }
   }
   &Header {
     padding: 20px 32px;
@@ -115,7 +120,7 @@
   &Content {
     padding: 16px;
     width: 100%;
-    height: calc(100% - 80px);
+    height: calc(100dvh - 80px);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -145,6 +150,10 @@
       font-weight: 400;
       line-height: 16px;
       outline: none;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 1rem;
+      }
     }
     button {
       background: none;

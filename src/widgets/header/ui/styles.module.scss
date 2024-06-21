@@ -7,6 +7,9 @@
   width: 100%;
   background-color: #1C212B;
   min-height: 80px;
+  @media screen and (max-width: 1024px){
+    z-index: 12;
+  }
   &LeftSide, &RightSide {
     display: flex;
     align-items: center;
@@ -79,6 +82,50 @@
             font-size: 12px;
           }
         }
+      }
+    }
+  }
+  &Menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--color-dark-light);
+    border-radius: 6px;
+    border: unset;
+    outline: unset;
+    svg {
+      fill: white;
+    }
+  }
+  &Mobile {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    background: var(--color-dark);
+    width: 100dvw;
+    height: calc(100dvh - 8px);
+    z-index: 11;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    &MainList {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    &Link {
+      &Main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        background: var(--color-dark-light);
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
       }
     }
   }
