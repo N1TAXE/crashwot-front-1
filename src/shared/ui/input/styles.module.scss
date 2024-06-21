@@ -32,6 +32,10 @@
       line-height: 16px;
       outline: none;
 
+      @media screen and (max-width: 1024px) {
+        font-size: 1rem;
+      }
+
       transition: border ease .3s, background-color ease .3s;
 
       -moz-appearance: textfield;

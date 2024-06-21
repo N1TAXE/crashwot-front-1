@@ -22,6 +22,9 @@ export function CrashGamePage() {
                     <div className={styles.sectionRight}>
                         <CrashGameAnimation/>
                         <CrashGameHistory/>
+                        <div className={styles.sectionMobile}>
+                            <CrashGameInputs/>
+                        </div>
                         <CrashGamePlayers/>
                     </div>
                 </section>

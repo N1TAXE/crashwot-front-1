@@ -3,7 +3,11 @@
   flex-direction: column;
   gap: 8px;
   width: 100%;
-  overflow: hidden;
+  overflow-x: scroll;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .item {
@@ -12,6 +16,7 @@
   border-radius: var(--border-radius-cards);
   background: #232831;
   padding: 16px;
+  min-width: 460px;
   .block {
     width: 100%;
     display: flex;

@@ -9,6 +9,9 @@
     min-width: 248px;
     width: 100%;
     max-width: 288px;
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
   }
   &Right {
     width: 100%;
@@ -16,5 +19,12 @@
     flex-direction: column;
     gap: 16px;
     min-width: 0;
+  }
+  &Mobile {
+    display: none;
+    @media screen and (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
