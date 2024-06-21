@@ -9,6 +9,7 @@
   min-height: 80px;
   @media screen and (max-width: 1024px){
     z-index: 12;
+    position: fixed;
   }
   &LeftSide, &RightSide {
     display: flex;
