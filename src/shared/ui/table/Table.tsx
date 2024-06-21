@@ -1,7 +1,5 @@
 import {TableHeader} from "./TableHeader.tsx";
 import {TableRow} from "./TableRow.tsx";
-import {inspect} from "util";
-import styles = module
 export interface IColumnType<T> {
     key: string;
     title: string;
