@@ -57,11 +57,19 @@ main {
   padding: 24px;
 }
 
+.tableWrapper {
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 table {
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
   gap: 16px;
+  min-width: 760px;
   thead {
     display: flex;
     align-items: center;
@@ -71,6 +79,7 @@ table {
       display: flex;
       align-items: center;
       flex: 1 1 0;
+
       th {
         display: flex;
         align-items: center;

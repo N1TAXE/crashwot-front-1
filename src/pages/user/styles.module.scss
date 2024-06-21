@@ -6,5 +6,7 @@
     display: flex;
     align-items: stretch;
     gap: 8px;
+    flex-wrap: wrap;
+    row-gap: 8px;
   }
 }

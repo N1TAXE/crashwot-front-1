@@ -1,5 +1,7 @@
 import {TableHeader} from "./TableHeader.tsx";
 import {TableRow} from "./TableRow.tsx";
+import {inspect} from "util";
+import styles = module
 export interface IColumnType<T> {
     key: string;
     title: string;
@@ -14,13 +16,15 @@ interface Props<T> {
 
 export function Table<T>({ data, columns }: Props<T>): JSX.Element {
     return (
-        <table>
-            <thead>
-            <TableHeader columns={columns} />
-            </thead>
-            <tbody>
-            <TableRow data={data} columns={columns} />
-            </tbody>
-        </table>
+        <div className="tableWrapper">
+            <table>
+                <thead>
+                <TableHeader columns={columns} />
+                </thead>
+                <tbody>
+                <TableRow data={data} columns={columns} />
+                </tbody>
+            </table>
+        </div>
     );
 }
