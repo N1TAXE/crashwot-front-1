@@ -51,10 +51,10 @@ export const CasesFullPage = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className={styles.warning}>
-                            <h4>ВЫ НЕ АВТОРИЗОВАНЫ!</h4>
-                            <p>Для открытия кейсов необходимо пройти авторизацию</p>
-                        </div>
+                    </div>
+                    <div className={styles.warning}>
+                        <h4>ВЫ НЕ АВТОРИЗОВАНЫ!</h4>
+                        <p>Для открытия кейсов необходимо пройти авторизацию</p>
                     </div>
                 </div>
                 <div className={styles.buttons}>

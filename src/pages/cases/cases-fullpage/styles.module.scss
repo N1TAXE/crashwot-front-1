@@ -106,6 +106,7 @@
       }
 
       &Wrapper {
+        position: relative;
         display: flex;
         align-items: center;
         gap: 16px;
@@ -223,12 +224,16 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -8px;
+  bottom: 16px;
   border-radius: 12px;
   background: rgba(115, 65, 65, 0.50);
   backdrop-filter: blur(8px);
-  z-index: 3;
+  z-index: 6;
   padding: 16px 32px;
+  width: max-content;
+  @media screen and (max-width: 580px) {
+    width: 100%;
+  }
   h4 {
     display: flex;
     align-items: center;

@@ -10,6 +10,7 @@
   overflow: hidden;
   height: 100%;
   min-width: 120px;
+  scroll-snap-align: start;
   &:before {
     content: '';
     position: absolute;

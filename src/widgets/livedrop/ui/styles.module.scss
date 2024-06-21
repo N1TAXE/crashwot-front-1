@@ -7,6 +7,9 @@
   overflow: hidden;
   gap: 16px;
   flex: 1 1 100%;
+  @media screen and (max-width: 580px) {
+    padding: 24px 24px 0 24px;
+  }
   &List {
     display: flex;
     gap: 2px;
@@ -14,6 +17,12 @@
     flex: 1 1 100%;
     border-radius: 12px;
     overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   &Buttons {
     position: relative;
