@@ -11,6 +11,7 @@
   transition-property: color, background-color;
   transition-duration: .3s;
   transition-timing-function: ease;
+  white-space: nowrap;
 
   &:hover {
     color: #fff;

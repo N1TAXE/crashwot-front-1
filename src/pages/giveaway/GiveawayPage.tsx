@@ -10,7 +10,7 @@ export const GiveawayPage = () => {
     const [tab, setTab] = useState(0);
     const data = {
         prize: 'Название приза',
-        image: 'https://www.dom1n.com/wp-content/grand-media/image/original/dc85a0b337094b0693eb223a59cfc279.png'
+        image: 'https://ggdrop.app/public/storage/cases/y4PmPWM3jmDVOOvnKAN8ebOgldla5DjkLbZbZHiO.png'
     }
     return (
         <div className={`container ${styles.giveaway}`}>

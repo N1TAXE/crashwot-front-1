@@ -21,7 +21,7 @@
     }
     &Header {
       display: flex;
-      padding: 8px 8px 0px 8px;
+      padding: 8px 8px 0 8px;
       justify-content: space-between;
       align-items: center;
       align-self: stretch;
@@ -55,11 +55,20 @@
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
+    z-index: 2;
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      gap: 16px;
+    }
     &Title {
       display: flex;
       flex-direction: column;
       gap: 8px;
       align-items: flex-start;
+      @media screen and (max-width: 1024px) {
+        align-items: center;
+        text-align: center;
+      }
       h1 {
         color: #FFD29C;
         font-size: 40px;
@@ -72,6 +81,9 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      @media screen and (max-width: 1024px) {
+        align-items: center;
+      }
       h4 {
         color: #7D8696;
         text-align: right;
@@ -98,4 +110,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
 }
