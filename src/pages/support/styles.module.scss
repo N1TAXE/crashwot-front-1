@@ -2,6 +2,9 @@
   display: flex;
   gap: 32px;
   width: 100%;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
   &Faq {
     display: flex;
     flex-direction: column;

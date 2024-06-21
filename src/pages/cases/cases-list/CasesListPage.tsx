@@ -19,22 +19,20 @@ export const CasesListPage = () => {
     if (error) return <p>Error : {error.message}</p>;
 
     return (
-        <React.Fragment>
+        <div className="container">
             <LiveDrop/>
-            <div className="container">
-                <section className={styles.section}>
-                    <div className={styles.categoryItem}>
-                        <div className={styles.categoryTitle}>
-                            Категория
-                        </div>
-                        <div className={styles.caseList}>
-                            {Array.from({length: 8}, (_, i) => (
-                                <CaseCard key={i}/>
-                            ))}
-                        </div>
+            <section className={styles.section}>
+                <div className={styles.categoryItem}>
+                    <div className={styles.categoryTitle}>
+                        Категория
                     </div>
-                </section>
-            </div>
-        </React.Fragment>
+                    <div className={styles.caseList}>
+                        {Array.from({length: 8}, (_, i) => (
+                            <CaseCard key={i}/>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </div>
     );
 };

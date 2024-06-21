@@ -18,7 +18,7 @@ export const FaqItem = ({data} : FAQITemType) => {
     return (
         <div className={clsx(styles.item, isOpened && styles.opened)}>
             <div onClick={() => setIsOpened(prevState => !prevState)} className={styles.itemHead}>
-                {data.title}
+                <span>{data.title}</span>
                 {!isOpened ? (
                     <Icon icon="plus"/>
                 ):(
