@@ -8,15 +8,7 @@ import {useWindowDimensions} from "../../../shared/lib/hooks";
 import {MobileMenu} from "./MobileMenu.tsx";
 import {useChatStore} from "../../../app/stores";
 import {useUserStore} from "../../../app/stores/userStore.tsx";
-import {DataUserType} from "../../../shared/types";
-const testUserData: DataUserType = {
-    avatar: "https://avatars.akamai.steamstatic.com/3e0a57de99721d18d99cfc29223c19fcfd0f6e98_full.jpg",
-    balance: 2324.32,
-    id: 0,
-    name: "N1TAXE",
-    role: "USER",
-
-}
+import {testUserData} from "../../../shared/testData";
 export const Header = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
     const [ , width ] = useWindowDimensions();

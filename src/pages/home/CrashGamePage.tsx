@@ -5,8 +5,10 @@ import {CrashGameHistory} from "./ui/crashgame-history";
 import {CrashGamePlayers} from "./ui/crashgame-players";
 import { Helmet } from "react-helmet"
 import React from 'react'
+import {useInitializeCrashData} from "../../shared/lib/initialize";
 
 export function CrashGamePage() {
+    useInitializeCrashData()
     return (
         <React.Fragment>
             <Helmet>

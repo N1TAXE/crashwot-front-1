@@ -8,13 +8,14 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     icon?: IconTypes;
 }
-export const Input: FC<InputProps> = ({label, name, type, icon, ...rest}) => {
+export const Input: FC<InputProps> = ({label, name, type, icon, children, ...rest}) => {
     return (
         <div className={styles.inputItem}>
             {label ? <label htmlFor={name}>{label}</label> : null}
             <div className={styles.inputWrapper}>
                 <input name={name} type={type} placeholder={label} {...rest}/>
                 {icon ? (<Icon icon={icon}/>) : null}
+                {children}
             </div>
         </div>
     )
