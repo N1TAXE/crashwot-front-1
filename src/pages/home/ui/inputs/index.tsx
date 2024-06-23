@@ -61,7 +61,7 @@ export const CrashGameInputs = () => {
                                     return { ...prevState, editorRatioList: newEditorRatioList }
                             })}
                                 type='number'
-                                name='autowithdraw'
+                                name='editorRadioList'
                                 value={item}/>
                         )
                     ))}
