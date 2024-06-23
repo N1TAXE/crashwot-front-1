@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 import React, {Fragment} from 'react';
 import {Icon} from "../../shared/ui/icon";
 import {Input} from "../../shared/ui/input";
-import {ColorPicker} from "../../shared/ui/colorpiker";
+import {useColorPicker} from "../../shared/ui/colorpiker";
 import {ColorTypes} from "../../shared/ui/colorpiker/ui.tsx";
 import {Button} from "../../shared/ui/button";
 import {useModalStore} from "../../app/stores";
@@ -26,6 +26,12 @@ const colors: ColorTypes[] = [
 
 const ModalUserSettings = () => {
     const {closeModal} = useModalStore()
+    const [activeColor, ColorPickerComponent] = useColorPicker(
+        {
+            colors: colors,
+            label: "Цвет ника",
+            name: "colors"
+        });
     return (
         <Fragment>
             <div className={styles.modalHeader}>
@@ -33,8 +39,8 @@ const ModalUserSettings = () => {
                 <span>Кастомизация</span>
             </div>
             <form className={styles.modalContent}>
-                <Input className={styles.userSettingsInput} label="Ваш никнейм" name="nickname" disabled={true} type="test" value="nickname"/>
-                <ColorPicker colors={colors} name="colors" label="Цвет ника"/>
+                <Input style={{color: colors[activeColor].color}} className={styles.userSettingsInput} label="Ваш никнейм" name="nickname" disabled={true} type="test" value="nickname"/>
+                {ColorPickerComponent}
                 <Button color="green" size="medium" onClick={closeModal} icon="check">Сохранить</Button>
             </form>
         </Fragment>

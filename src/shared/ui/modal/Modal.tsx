@@ -3,7 +3,6 @@ import React, {useEffect} from 'react';
 import {Icon} from "../icon";
 import {ModalPortal} from "../portal";
 import {useModalStore} from "../../../app/stores";
-
 export const Modal = () => {
     const { modal, component, closeModal } = useModalStore();
 
@@ -19,7 +18,6 @@ export const Modal = () => {
     if (!modal) return null;
 
     const handleClickOutside = (e: React.MouseEvent<HTMLDivElement>) => {
-        console.log(e.target)
         if ((e.target as HTMLDivElement).className === styles.modal) {
             closeModal();
         }

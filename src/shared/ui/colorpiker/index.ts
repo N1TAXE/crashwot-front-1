@@ -1,1 +1,1 @@
-export { ColorPicker } from './ui';
+export { useColorPicker } from './ui';

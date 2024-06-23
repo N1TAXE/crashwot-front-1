@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import {FC, HTMLAttributes, useState} from "react";
+import {HTMLAttributes, useState} from "react";
 import {Icon} from "../icon";
 
 export interface ColorTypes {
@@ -12,9 +12,10 @@ interface PickerProps extends HTMLAttributes<HTMLDivElement> {
     label?: string;
 }
 
-export const ColorPicker: FC<PickerProps> = ({colors, label, name, ...rest}) => {
-    const [active, setActive] = useState<number>(0)
-    return (
+export const useColorPicker = ({colors, label, name, ...rest}: PickerProps) => {
+    const [active, setActive] = useState<number>(0);
+
+    const component = (
         <div className={styles.inputItem}>
             {label ? <label htmlFor={name}>{label}</label> : null}
             <div className={styles.inputWrapper} {...rest}>
@@ -22,11 +23,18 @@ export const ColorPicker: FC<PickerProps> = ({colors, label, name, ...rest}) => 
                     <div className={styles.inputColorWrapper} key={index}>
                         <div className={`${styles.inputColor}${active === index ? ` ${styles.active}` : ''}`} style={{backgroundColor: item.color}}>
                             <Icon icon="check" size={12}/>
-                            <input type="radio" name={name} checked={active === index} onClick={() => setActive(index)}/>
+                            <input
+                                type="radio"
+                                name={name}
+                                checked={active === index}
+                                onChange={() => setActive(index)}
+                            />
                         </div>
                     </div>
                 ))}
             </div>
         </div>
     );
+
+    return [active, component] as const;
 };
