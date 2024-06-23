@@ -6,7 +6,7 @@ import {Button} from "../../../shared/ui/button";
 import {Icon} from "../../../shared/ui/icon";
 import {useWindowDimensions} from "../../../shared/lib/hooks";
 import {MobileMenu} from "./MobileMenu.tsx";
-import {useChatStore} from "../../../app/stores/gobalStore.tsx";
+import {useChatStore} from "../../../app/stores";
 export const Header = () => {
     const [isAuth, setIsAuth] = useState(false);
     const [mobileMenu, setMobileMenu] = useState(false);
@@ -97,12 +97,8 @@ export const Header = () => {
                                 1337
                                 <Icon icon="coins"/>
                             </span>
-                                    <Button size='small' color='green'>Пополнить</Button>
+                                    <Button size='small' color='green' icon="add"/>
                                 </div>
-                                <NavLink to={PATHS.user.root(1)} className={styles.headerProfileAva}>
-                                    <img src="https://avatars.steamstatic.com/8dfe278c7493b6984540e57ecd57b791df13841e_full.jpg" alt=""/>
-                                </NavLink>
-                                <Button className={styles.logout} size='regular' icon='logout' color='dark-light'/>
                             </div>
                         ):(
                             <Button onClick={() => setIsAuth(true)} size='regular' color="blue" icon="lock">АВТОРИЗАЦИЯ</Button>

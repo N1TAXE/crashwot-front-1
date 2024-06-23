@@ -2,8 +2,8 @@ import styles from './styles.module.scss'
 import {Icon} from "../../../shared/ui/icon";
 import {Button} from "../../../shared/ui/button";
 import {ChatMessage} from "./chat-message";
-import {useChatStore} from "../../../app/stores/gobalStore.tsx";
 import {useEffect, useState} from "react";
+import {useChatStore} from "../../../app/stores";
 export const Chat = () => {
     const { chatData, setChatData } = useChatStore();
     const [state, setState] = useState<boolean>(false);

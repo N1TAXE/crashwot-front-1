@@ -5,7 +5,7 @@ import {Input} from "../../shared/ui/input";
 import {ColorPicker} from "../../shared/ui/colorpiker";
 import {ColorTypes} from "../../shared/ui/colorpiker/ui.tsx";
 import {Button} from "../../shared/ui/button";
-import {useModalStore} from "../../app/stores/gobalStore.tsx";
+import {useModalStore} from "../../app/stores";
 
 const colors: ColorTypes[] = [
     {color: '#92E7A5'},

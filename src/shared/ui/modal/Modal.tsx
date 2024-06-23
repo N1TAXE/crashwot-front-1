@@ -1,8 +1,8 @@
 import styles from './styles.module.scss'
 import React, {useEffect} from 'react';
 import {Icon} from "../icon";
-import {useModalStore} from "../../../app/stores/gobalStore.tsx";
 import {ModalPortal} from "../portal";
+import {useModalStore} from "../../../app/stores";
 
 export const Modal = () => {
     const { modal, component, closeModal } = useModalStore();

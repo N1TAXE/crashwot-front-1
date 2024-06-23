@@ -3,7 +3,7 @@ import {Sidebar} from "../../sidebar";
 import styles from './styles.module.scss'
 import {Header} from "../../header";
 import {Chat} from "../../chat";
-import {useChatStore} from "../../../app/stores/gobalStore.tsx";
+import {useChatStore} from "../../../app/stores";
 
 export function MainLayout() {
     const { chatData } = useChatStore();

@@ -1,6 +1,7 @@
-import {useChatStore} from "../../../app/stores/gobalStore.tsx";
+
 import {useEffect} from "react";
 import {useWindowDimensions} from "../hooks";
+import {useChatStore} from "../../../app/stores";
 
 export const useInitializeChatData = () => {
     const { chatData, setChatData } = useChatStore();

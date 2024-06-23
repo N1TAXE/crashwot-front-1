@@ -3,7 +3,7 @@ import {Button} from "../../../shared/ui/button";
 import {Icon} from "../../../shared/ui/icon";
 import { useCopyToClipboard } from 'usehooks-ts';
 import toast from "react-hot-toast";
-import {useModalStore} from "../../../app/stores/gobalStore.tsx";
+import {useModalStore} from "../../../app/stores";
 export const ProfileUser = () => {
     const [, copy] = useCopyToClipboard();
     const { openModal } = useModalStore();
