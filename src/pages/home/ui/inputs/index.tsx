@@ -5,6 +5,7 @@ import {Button} from "../../../../shared/ui/button";
 import {CrashSettingsType, useUserStore} from "../../../../app/stores/userStore.tsx";
 import {testUserData} from "../../../../shared/testData";
 import {useEffect, useState} from "react";
+import {Warning} from "../../../../shared/ui/warning";
 export const CrashGameInputs = () => {
     const {user, setUser, crashSettings, setCrashSettings} = useUserStore();
     const [settings, setSettings] = useState<CrashSettingsType>({sum: 0.1, editorRatio: 2, editorRatioList: [1.1, 1.2, 1.5, 2]});
@@ -20,7 +21,10 @@ export const CrashGameInputs = () => {
 
     if (!user) return (
         <div className={styles.card}>
-            <span className={styles.auth}>Чтобы играть в этот режим нужно быть авторизованым</span>
+            <Warning type="Error">
+                <h4>ВЫ НЕ АВТОРИЗОВАНЫ!</h4>
+                <p>Чтобы играть в этот режим нужно быть авторизованым</p>
+            </Warning>
             <Button size='medium' color='green' icon="lock" onClick={() => setUser(testUserData)}>Авторизация</Button>
         </div>
     )

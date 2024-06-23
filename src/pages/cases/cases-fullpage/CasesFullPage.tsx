@@ -5,6 +5,7 @@ import {ItemCard} from "../../../entities/item-card";
 import Tooltip from "rc-tooltip";
 import {Icon} from "../../../shared/ui/icon";
 import {TooltipProps} from "rc-tooltip/lib/Tooltip";
+import {Warning} from "../../../shared/ui/warning";
 
 const tt: Omit<TooltipProps, 'children'> = {
     placement: 'top',
@@ -53,8 +54,10 @@ export const CasesFullPage = () => {
                         </div>
                     </div>
                     <div className={styles.warning}>
-                        <h4>ВЫ НЕ АВТОРИЗОВАНЫ!</h4>
-                        <p>Для открытия кейсов необходимо пройти авторизацию</p>
+                        <Warning type="Error">
+                            <h4>ВЫ НЕ АВТОРИЗОВАНЫ!</h4>
+                            <p>Для открытия кейсов необходимо пройти авторизацию</p>
+                        </Warning>
                     </div>
                 </div>
                 <div className={styles.buttons}>

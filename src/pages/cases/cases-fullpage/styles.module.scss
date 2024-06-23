@@ -216,48 +216,14 @@
 }
 
 .warning {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 16px;
-  border-radius: 12px;
-  background: rgba(115, 65, 65, 0.50);
-  backdrop-filter: blur(8px);
   z-index: 6;
-  padding: 16px 32px;
-  width: max-content;
+
   @media screen and (max-width: 580px) {
     width: 100%;
-  }
-  h4 {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: #FF8A8A;
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 16px; /* 114.286% */
-    i {
-      &:before {
-        color: #FF8A8A;
-        font-size: 12px;
-      }
-    }
-  }
-  p {
-    color: #FFF;
-    text-align: center;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px; /* 133.333% */
   }
 }
 .buttons {
