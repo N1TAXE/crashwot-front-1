@@ -2,7 +2,10 @@ import styles from './styles.module.scss'
 import {NavLink} from "react-router-dom";
 import {PATHS} from "../../../shared/lib/react-router";
 import {Icon} from "../../../shared/ui/icon";
+import {useUserStore} from "../../../app/stores/userStore.tsx";
+import {Button} from "../../../shared/ui/button";
 export const MobileMenu = ({isActive, setIsActive}: { isActive: boolean, setIsActive: (bool: boolean) => void }) => {
+    const {user, clearUser} = useUserStore();
     const onClick = () => {
         setIsActive(false)
     }
@@ -29,6 +32,12 @@ export const MobileMenu = ({isActive, setIsActive}: { isActive: boolean, setIsAc
                     Помощь
                     <Icon icon="cog"/>
                 </NavLink>
+                {user && (
+                    <div onClick={clearUser} className={styles.headerMobileLinkMain}>
+                        Выход
+                        <Icon icon="logout"/>
+                    </div>
+                )}
             </div>
         </div>
     )

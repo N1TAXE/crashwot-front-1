@@ -106,11 +106,15 @@
     left: 0;
     background: var(--color-dark);
     width: 100dvw;
-    height: calc(100dvh - 8px);
+    height: calc(100dvh - 80px);
     z-index: 11;
     padding: 24px;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     &MainList {
       display: flex;
       flex-direction: column;

@@ -7,11 +7,21 @@ import {Icon} from "../../../shared/ui/icon";
 import {useWindowDimensions} from "../../../shared/lib/hooks";
 import {MobileMenu} from "./MobileMenu.tsx";
 import {useChatStore} from "../../../app/stores";
+import {useUserStore} from "../../../app/stores/userStore.tsx";
+import {DataUserType} from "../../../shared/types";
+const testUserData: DataUserType = {
+    avatar: "https://avatars.akamai.steamstatic.com/3e0a57de99721d18d99cfc29223c19fcfd0f6e98_full.jpg",
+    balance: 2324.32,
+    id: 0,
+    name: "N1TAXE",
+    role: "USER",
+
+}
 export const Header = () => {
-    const [isAuth, setIsAuth] = useState(false);
     const [mobileMenu, setMobileMenu] = useState(false);
     const [ , width ] = useWindowDimensions();
     const { chatData} = useChatStore();
+    const { setUser, clearUser, user} = useUserStore();
 
     useEffect(() => {
         if (chatData.isOpened) {
@@ -53,22 +63,22 @@ export const Header = () => {
                     </div>
                 </div>
                 <div className={styles.headerRightSide}>
-                    {isAuth ? (
+                    {user ? (
                         <div className={styles.headerProfile}>
                             <div className={styles.headerProfileInfo}>
                             <span>
-                                1337
+                                {user.balance}
                                 <Icon icon="coins"/>
                             </span>
                                 <Button size='small' color='green'>Пополнить</Button>
                             </div>
                             <NavLink to={PATHS.user.root(1)} className={styles.headerProfileAva}>
-                                <img src="https://avatars.steamstatic.com/8dfe278c7493b6984540e57ecd57b791df13841e_full.jpg" alt=""/>
+                                <img src={user.avatar} alt={user.name}/>
                             </NavLink>
-                            <Button className={styles.logout} size='regular' icon='logout' color='dark-light'/>
+                            <Button onClick={clearUser} className={styles.logout} size='regular' icon='logout' color='dark-light'/>
                         </div>
                     ):(
-                        <Button onClick={() => setIsAuth(true)} size='medium' color="blue" icon="lock">АВТОРИЗАЦИЯ</Button>
+                        <Button onClick={() => setUser(testUserData)} size='medium' color="blue" icon="lock">АВТОРИЗАЦИЯ</Button>
                     )}
                 </div>
             </header>
@@ -90,18 +100,18 @@ export const Header = () => {
                         </NavLink>
                     </div>
                     <div className={styles.headerRightSide}>
-                        {isAuth ? (
+                        {user ? (
                             <div className={styles.headerProfile}>
                                 <div className={styles.headerProfileInfo}>
                             <span>
-                                1337
+                                {user.balance}
                                 <Icon icon="coins"/>
                             </span>
                                     <Button size='small' color='green' icon="add"/>
                                 </div>
                             </div>
                         ):(
-                            <Button onClick={() => setIsAuth(true)} size='regular' color="blue" icon="lock">АВТОРИЗАЦИЯ</Button>
+                            <Button onClick={() => setUser(testUserData)} size='regular' color="blue" icon="lock">АВТОРИЗАЦИЯ</Button>
                         )}
                         <button onClick={() => setMobileMenu(prevState => !prevState)} className={styles.headerMenu}>
                             {!mobileMenu ? (
