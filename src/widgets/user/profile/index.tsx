@@ -5,13 +5,10 @@ import { useCopyToClipboard } from 'usehooks-ts';
 import toast from "react-hot-toast";
 import {useModalStore} from "../../../app/stores";
 import {useUserStore} from "../../../app/stores/userStore.tsx";
-import { useNavigate } from 'react-router-dom';
-import {PATHS} from "../../../shared/lib/react-router";
 export const ProfileUser = () => {
     const [, copy] = useCopyToClipboard();
     const { openModal } = useModalStore();
     const {user} = useUserStore()
-    const navigate = useNavigate();
     const handleCopy = (text: string) => () => {
         copy(text)
             .then(() => {
@@ -21,7 +18,9 @@ export const ProfileUser = () => {
                 console.error('Failed to copy!', error)
             })
     }
-    if (!user) return navigate(PATHS.root)
+
+    if (!user) return <>Loading...</>
+
     return (
         <div className={styles.profileUser}>
             <div className={styles.profileUserTop}>

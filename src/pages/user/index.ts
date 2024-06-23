@@ -1,1 +1,1 @@
-export {UserPage} from './UserPage.tsx'
+export {UserPage} from './User.tsx'
