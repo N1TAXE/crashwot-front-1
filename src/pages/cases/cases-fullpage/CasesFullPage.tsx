@@ -9,10 +9,9 @@ import {Warning} from "../../../shared/ui/warning";
 import {useUserStore} from "../../../app/stores/userStore.tsx";
 import {testCaseData, testUserData} from "../../../shared/testData";
 import {useParams} from "react-router-dom";
-import {GetRarityName} from "../../../shared/utils";
-import {EXTERNAL_LINKS} from "../../../shared/constants";
 import {useEffect, useState} from "react";
 import {DataCaseType, DataItemType} from "../../../shared/types";
+import RouletteLine from "./RouletteLine.tsx";
 
 const tt: Omit<TooltipProps, 'children'> = {
     placement: 'top',
@@ -23,8 +22,8 @@ export const CasesFullPage = () => {
     const {user, setUser, setUserBalance} = useUserStore();
     const [caseData, setCaseData] = useState<DataCaseType>()
     const [lineItems, setLineItems] = useState<DataItemType[][]>([])
-    const [cardWidth] = useState<number>(204)
     const [amount, setAmount] = useState<number>(1)
+    const [prizes, setPrizes] = useState<DataItemType[]>([])
 
     const {altName} = useParams();
 
@@ -34,14 +33,24 @@ export const CasesFullPage = () => {
 
     useEffect(() => {
         if (caseData) {
-            setLineItems(prevState => [
-                ...prevState,
-                [
-                    ...caseData.items
-                ].sort(() => Math.random() - 0.5)
-            ])
+            setLineItems(prevState => {
+                const arraysToAdd = amount - prevState.length;
+                if (arraysToAdd > 0) {
+                    return [
+                        ...prevState,
+                        ...Array.from({ length: arraysToAdd }, () => [
+                            ...caseData.items
+                        ].sort(() => Math.random() - 0.5))
+                    ];
+                }
+                return prevState;
+            });
         }
     }, [amount, caseData]);
+
+    const handleOpen = () => {
+        console.log('test')
+    }
     
     if (!caseData) return <>Error...</>
 
@@ -58,40 +67,8 @@ export const CasesFullPage = () => {
                     </Tooltip>
                 </div>
                 <div className={styles.caseInfoWrapper}>
-                    {lineItems[0] && Array.from({length: amount}, (_, i) => (
-                        <div key={i} className={styles.caseInfo}>
-                            <div className={styles.caseImage}>
-                                <img src={caseData.image} alt={caseData.title}/>
-                            </div>
-                            <div className={styles.arrows}>
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.83467 16.6154C7.79704 18.4615 10.203 18.4615 11.1653 16.6154L17.6613 4.15385C18.6237 2.3077 17.4207 0 15.496 0H2.50403C0.5793 0 -0.623659 2.30769 0.338707 4.15385L6.83467 16.6154Z" fill="#92E7A5"/>
-                                </svg>
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.83467 1.38462C7.79704 -0.461537 10.203 -0.46154 11.1653 1.38461L17.6613 13.8462C18.6237 15.6923 17.4207 18 15.496 18H2.50403C0.5793 18 -0.623659 15.6923 0.338707 13.8462L6.83467 1.38462Z" fill="#92E7A5"/>
-                                </svg>
-                            </div>
-                            <div className={styles.roulette}>
-                                <div className={styles.rouletteRoot}>
-                                    {lineItems[i].map((item) => (
-                                        <div
-                                            style={{
-                                                transform: `translateX(-${cardWidth * 4}px)`
-                                            }}
-                                            key={item.id}
-                                            className={clsx(styles.rouletteItem, styles[GetRarityName(item.rarity)!])
-                                            }>
-                                            <div className={styles.rouletteItemImage}>
-                                                <img src={`${EXTERNAL_LINKS.STEAM_ITEMS}${item.image}`} alt={item.title}/>
-                                            </div>
-                                            <div className={styles.rouletteItemTitle}>
-                                                {item.title}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
+                    {Array.from({length: amount}, (_, i) => (
+                        <RouletteLine key={i} lineItems={lineItems[i]} caseData={caseData}/>
                     ))}
                     {!user && (
                         <div className={styles.warning}>

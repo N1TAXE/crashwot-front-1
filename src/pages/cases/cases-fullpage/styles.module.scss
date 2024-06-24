@@ -154,6 +154,7 @@
     height: max-content;
     display: flex;
     gap: 8px;
+    transition: transform ease-out 10s;
   }
   &Item {
     position: relative;

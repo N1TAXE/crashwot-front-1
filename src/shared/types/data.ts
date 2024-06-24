@@ -38,6 +38,7 @@ export interface DataCategoryType {
     id: number
     title: string
     sorting: number
+    cases: DataCaseType[]
 }
 
 export interface DataCaseType {
