@@ -43,6 +43,7 @@ export interface DataCategoryType {
 export interface DataCaseType {
     id: number
     title: string
+    altName: string
     metatitle: string
     metadescription: string
     metakeywords: string
@@ -53,9 +54,9 @@ export interface DataCaseType {
     price10: number
     price20: number
     price30: number
-    category: DataCategoryType
+    category?: DataCategoryType
     items: DataItemType[]
-    sorting: number
+    sorting?: number
 }
 
 export interface DataItemType {

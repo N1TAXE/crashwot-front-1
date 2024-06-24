@@ -1,9 +1,12 @@
 import styles from './styles.module.scss'
 import clsx from "clsx";
 import {Icon} from "../../shared/ui/icon";
-export const ItemCard = () => {
+import {DataItemType} from "../../shared/types";
+import {EXTERNAL_LINKS} from "../../shared/constants";
+import {GetRarityName} from "../../shared/utils";
+export const ItemCard = ({data}: {data: DataItemType}) => {
     return (
-        <div className={clsx(styles.item, styles.colorExtraordinary)}>
+        <div className={clsx(styles.item, styles[GetRarityName(data.rarity)!])}>
             <svg width="88" height="92" viewBox="0 0 88 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M69.5754 39.2454L74.4098 43.5479H56.4919L54.368 41.4925L54.3607 41.4998L52.5504 39.748L44.1091 47.9168L35.6667 39.7474L33.8534 41.5021L33.8432 41.4925L31.7195 43.5479H13.7904L18.6249 39.2454H69.5754Z" fill="black" fillOpacity="0.15"/>
                 <path d="M50.0445 20.482C50.3595 20.0376 50.6583 19.4924 50.8895 18.8378C51.034 18.4279 51.2486 17.8905 51.4983 17.2706C49.3352 18.5243 46.8045 19.2448 44.1 19.2448C41.3954 19.2448 38.8645 18.5243 36.7017 17.2706C36.9514 17.8905 37.1659 18.4279 37.3105 18.8378C37.5414 19.4924 37.8402 20.0376 38.1552 20.482C39.9265 21.3991 41.9505 21.9193 44.1 21.9193C46.2495 21.9193 48.2734 21.3991 50.0445 20.482Z" fill="black" fillOpacity="0.15"/>
@@ -14,15 +17,15 @@ export const ItemCard = () => {
             </svg>
 
             <div className={styles.itemImage}>
-                <img src="https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957PvBZzh94NWxnJS0m_bmNL6fxDoJsZwk0uyT9Ir02lfi8hA6MD2nLIaScwQ6MlrX8wC-lOjrgJC-uYOJlyVQbQuu3g/150fx112f" alt=""/>
+                <img src={`${EXTERNAL_LINKS.STEAM_ITEMS}${data.image}`} alt=""/>
             </div>
             <div className={styles.itemInfo}>
                 <div className={styles.itemInfoPrice}>
                     <Icon icon="coins"/>
-                    1337
+                    {data.price}
                 </div>
                 <div className={styles.itemInfoTitle}>
-                    Test item
+                    {data.title}
                 </div>
             </div>
             <div className={styles.itemButtons}>

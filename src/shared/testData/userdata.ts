@@ -5,6 +5,5 @@ export const testUserData: DataUserType = {
     balance: 2324.32,
     id: 1,
     name: "N1TAXE",
-    role: "USER",
-
+    role: "USER"
 }
