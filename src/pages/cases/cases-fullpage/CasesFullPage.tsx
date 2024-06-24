@@ -13,7 +13,6 @@ import {GetRarityName} from "../../../shared/utils";
 import {EXTERNAL_LINKS} from "../../../shared/constants";
 import {useEffect, useState} from "react";
 import {DataCaseType, DataItemType} from "../../../shared/types";
-import {Input} from "../../../shared/ui/input";
 
 const tt: Omit<TooltipProps, 'children'> = {
     placement: 'top',
