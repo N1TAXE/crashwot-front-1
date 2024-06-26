@@ -1,11 +1,21 @@
 import {ItemCard} from "../../../../entities/item-card";
 import styles from './styles.module.scss'
-
+import {useEffect, useState} from "react";
+import {DataItemType} from "../../../../shared/types";
+import {testItemsData} from "../../../../shared/testData";
 const TabInventory = () => {
+    const [data, setData] = useState<DataItemType[]>()
+
+    useEffect(() => {
+        setData(testItemsData)
+    }, []);
+
+    if (!data) return <>Error...</>
+
     return (
         <div className={styles.inventory}>
-            {Array.from({length: 32}, (_, i) => (
-                <ItemCard key={i}/>
+            {data.map((item) => (
+                <ItemCard key={item.id} data={item}/>
             ))}
         </div>
     );

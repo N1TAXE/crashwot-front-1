@@ -20,6 +20,38 @@ body {
   border-radius: 8px;
 }
 
+.swiper-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 60px);
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+
+  &-bullet {
+    cursor: pointer;
+    width: 12px;
+    height: 6px;
+    border-radius: 99px;
+    background: #fff;
+    opacity: 0.2;
+    transition:
+            opacity 0.3s ease,
+            height 0.3s ease-in-out;
+    margin: 0 !important;
+
+    &-active {
+      opacity: 1;
+      width: 24px;
+    }
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;

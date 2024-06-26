@@ -24,7 +24,7 @@ const colors: ColorTypes[] = [
     {color: '#FFA3A3'},
 ]
 
-const ModalUserSettings = () => {
+export const ModalUserSettings = () => {
     const {closeModal} = useModalStore()
     const [activeColor, ColorPickerComponent] = useColorPicker(
         {
@@ -46,5 +46,3 @@ const ModalUserSettings = () => {
         </Fragment>
     );
 };
-
-export default ModalUserSettings;
