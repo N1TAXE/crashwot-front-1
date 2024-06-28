@@ -26,7 +26,7 @@ export const Modal = () => {
     return (
         <ModalPortal>
             <div className={styles.modal} onClick={handleClickOutside}>
-                <div className={styles.modalContent}>
+                <div className={styles.modalContentWrapper}>
                     <button onClick={closeModal} className={styles.closeBtn}>
                         <Icon icon="cross"/>
                     </button>

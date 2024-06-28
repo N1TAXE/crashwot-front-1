@@ -33,7 +33,7 @@ export const ModalUserSettings = () => {
             name: "colors"
         });
     return (
-        <Fragment>
+        <div className={styles.modalContentInner}>
             <div className={styles.modalHeader}>
                 <Icon icon="cog"/>
                 <span>Кастомизация</span>
@@ -43,6 +43,6 @@ export const ModalUserSettings = () => {
                 {ColorPickerComponent}
                 <Button color="green" size="medium" onClick={closeModal} icon="check">Сохранить</Button>
             </form>
-        </Fragment>
+        </div>
     );
 };

@@ -17,7 +17,7 @@ export interface ModalSliderType {
 
 export const ModalSlider = ({data}: {data: ModalSliderType}) => {
     return (
-        <Fragment>
+        <div className={styles.modalContentInner}>
             <Swiper
                 className={styles.modalSlider}
                 slidesPerView={1}
@@ -41,6 +41,6 @@ export const ModalSlider = ({data}: {data: ModalSliderType}) => {
                 ))}
                 <SliderButtons/>
             </Swiper>
-        </Fragment>
+        </div>
     );
 };

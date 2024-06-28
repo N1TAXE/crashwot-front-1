@@ -1,4 +1,26 @@
 .modal {
+  &ContentInner {
+    max-width: 560px;
+    flex: 1 1 0;
+    width: 100%;
+
+    &.flexRow {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-width: 560px;
+    }
+
+    &.deposit {
+      max-width: 784px;
+    }
+  }
+  &RowItem {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1 1 0;
+  }
   &Header {
     display: flex;
     justify-content: flex-start;

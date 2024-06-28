@@ -6,14 +6,16 @@ import {Button} from "../../../shared/ui/button";
 import {Icon} from "../../../shared/ui/icon";
 import {useWindowDimensions} from "../../../shared/lib/hooks";
 import {MobileMenu} from "./MobileMenu.tsx";
-import {useChatStore} from "../../../app/stores";
+import {useChatStore, useModalStore} from "../../../app/stores";
 import {useUserStore} from "../../../app/stores/userStore.tsx";
 import {testUserData} from "../../../shared/testData";
+import ModalDeposit from "../../../entities/modals/ModalDeposit.tsx";
 export const Header = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
     const [ , width ] = useWindowDimensions();
     const { chatData} = useChatStore();
     const { setUser, clearUser, user} = useUserStore();
+    const {openModal} = useModalStore()
 
     useEffect(() => {
         if (chatData.isOpened) {
@@ -62,7 +64,7 @@ export const Header = () => {
                                 {user.balance}
                                 <Icon icon="coins"/>
                             </span>
-                                <Button size='small' color='green'>Пополнить</Button>
+                                <Button onClick={() => openModal(<ModalDeposit/>)} size='small' color='green'>Пополнить</Button>
                             </div>
                             <NavLink to={PATHS.user.root(1)} className={styles.headerProfileAva}>
                                 <img src={user.avatar} alt={user.name}/>

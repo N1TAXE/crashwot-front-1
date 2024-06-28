@@ -6,3 +6,10 @@ export const LOCALSTORAGE = {
 export const EXTERNAL_LINKS = {
     STEAM_ITEMS: "https://community.cloudflare.steamstatic.com/economy/image/"
 }
+
+export const PAYMENT_METHODS = [
+    {
+        name: 'yoomoney',
+        icon: ''
+    }
+]
