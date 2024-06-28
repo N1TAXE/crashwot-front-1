@@ -4,6 +4,34 @@ import {Button} from "../../../shared/ui/button";
 import {ChatMessage} from "./chat-message";
 import {useEffect, useState} from "react";
 import {useChatStore} from "../../../app/stores";
+import {TooltipProps} from "rc-tooltip/lib/Tooltip";
+import Tooltip from "rc-tooltip";
+
+const ttText = (
+    <div className={styles.chatRules}>
+        <h4>В чате запрещено:</h4>
+        <ol>
+            <li>Сливать промо / секретные коды</li>
+            <li>Попрошайничество</li>
+            <li>Оскорблять администрацию</li>
+            <li>Показывать чрезмерную агрессию и негатив</li>
+            <li>Обвинять администрацию сайта или сайт в обмане</li>
+            <li>Рекламировать сторонние ресурсы</li>
+            <li>Спамить / Флудить</li>
+            <li>Разжигание ненависти</li>
+            <li>Рекламировать реферальный код</li>
+        </ol>
+        <span className={styles.chatRulesWarning}>
+            Эмоции после поражения могут сыграть с Вами злую шутку. И помните: Вы всегда можете вывести предметы
+        </span>
+    </div>
+)
+
+const tt: Omit<TooltipProps, 'children'> = {
+    placement: 'top',
+    trigger: ["click"],
+    overlay: ttText,
+}
 export const Chat = () => {
     const { chatData, setChatData } = useChatStore();
     const [state, setState] = useState<boolean>(false);
@@ -25,7 +53,9 @@ export const Chat = () => {
                             <div className={styles.chatInfoTop}>
                                 <Icon icon="chat" />
                                 Онлайн-чат
-                                <Button size='small' className={styles.chatRulesButton}>Правила</Button>
+                                <Tooltip {...tt}>
+                                    <Button size='small' className={styles.chatRulesButton}>Правила</Button>
+                                </Tooltip>
                             </div>
                             <div className={styles.chatOnline}>
                                 1233
