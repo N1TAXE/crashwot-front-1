@@ -7,6 +7,7 @@ import {DataLiveDropType} from "../../shared/types";
 import Moment from "react-moment";
 import 'moment/locale/ru';
 import {GetRarityName} from "../../shared/utils";
+import {EXTERNAL_LINKS} from "../../shared/constants";
 export const LiveDropItem = ({data} : { data: DataLiveDropType }) => {
     return (
         <NavLink to={PATHS.user.root(data.user.id)} className={clsx(styles.item, styles[GetRarityName(data.item.rarity)!])}>
@@ -19,7 +20,7 @@ export const LiveDropItem = ({data} : { data: DataLiveDropType }) => {
                 <path fillRule="evenodd" clipRule="evenodd" d="M21.5684 33.4768L11.6678 43.1027H4.91232C4.99768 43.5363 5.09377 43.9663 5.20033 44.3922H10.3398L6.45766 48.1667C7.0461 49.5672 7.75283 50.9086 8.56578 52.1789L25.7939 35.4281L28.9193 38.4669L28.9176 38.4686L31.985 41.451L32 41.4675L32.015 41.451L35.0824 38.4686L35.0807 38.4669L38.2061 35.4281L55.4343 52.1789C56.2484 50.9067 56.956 49.5634 57.545 48.1607L53.669 44.3922H58.7998C58.9063 43.9663 59.0024 43.5363 59.0878 43.1027H52.3421L42.4416 33.4768H58.6603L59.266 33.9711C57.6909 23.8899 50.3428 15.6525 40.6026 12.5463C41.3244 11.318 41.7759 9.92019 41.8782 8.42945C54.7171 12.4767 64 24.2003 64 38.0318C64 45.973 60.9401 53.2193 55.9044 58.7169L52.7729 55.6723L52.7746 55.6703L38.2078 41.5075L35.1404 44.4898L52.8078 61.6702C49.3192 64.576 45.1798 66.7643 40.6316 68L32.0142 59.6215L32 59.6048L31.9858 59.6215L23.3682 68C18.8197 66.7641 14.68 64.5754 11.1913 61.6694L28.8598 44.4898L25.7924 41.5075L8.09485 58.716C3.05948 53.2183 6.99692e-07 45.9724 0 38.0318C-1.21879e-06 24.2003 9.28293 12.4767 22.1218 8.42945C22.2243 9.92021 22.6756 11.318 23.3972 12.5463C13.6568 15.6526 6.30838 23.8908 4.73384 33.9726L5.34146 33.4768H21.5684ZM17.9903 61.1353C19.3149 61.8962 20.7105 62.5527 22.1652 63.0926L31.9658 53.5637L32 53.5299L32.0344 53.5637L41.8348 63.0926C43.2895 62.5527 44.6853 61.8962 46.0097 61.1353L32.015 47.5285L32 47.5141L31.985 47.5285L17.9903 61.1353Z" fill="black" fillOpacity="0.15"/>
             </svg>
             <div className={styles.itemImages}>
-                <img src={data.item.image} alt="item"/>
+                <img src={`${EXTERNAL_LINKS.STEAM_ITEMS}${data.item.image}`} alt="item"/>
                 <img src={data.case.image} alt="item"/>
             </div>
             <div className={styles.itemInfo}>

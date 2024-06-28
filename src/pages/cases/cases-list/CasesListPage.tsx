@@ -1,11 +1,11 @@
 import styles from "./styles.module.scss";
 import {CaseCard} from "../../../entities/case-card";
 import React, {useEffect, useState} from "react";
-import { useQuery } from '@apollo/client';
-import {GET_CASES} from "../../../shared/queries";
 import {LiveDrop} from "../../../widgets/livedrop";
 import {DataCategoryType} from "../../../shared/types";
-import {testCategoriesData} from "../../../shared/testData/categoriesData.ts";
+import {testCategoriesData} from "../../../shared/testData";
+import {useQuery} from "@apollo/client";
+import {GET_CASES} from "../../../shared/queries";
 
 export const CasesListPage = () => {
     const { loading, error, data } = useQuery(GET_CASES);
