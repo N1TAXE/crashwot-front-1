@@ -4,7 +4,7 @@ import {Icon} from "../icon";
 import {ModalPortal} from "../portal";
 import {useModalStore} from "../../../app/stores";
 export const Modal = () => {
-    const { modal, component, closeModal } = useModalStore();
+    const { modal, closeModal } = useModalStore();
 
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
@@ -30,7 +30,7 @@ export const Modal = () => {
                     <button onClick={closeModal} className={styles.closeBtn}>
                         <Icon icon="cross"/>
                     </button>
-                    {component}
+                    {modal}
                 </div>
             </div>
         </ModalPortal>

@@ -6,12 +6,11 @@ import {Tab} from "../../entities/tab";
 import {Icon} from "../../shared/ui/icon";
 import {GiveawayInfo} from "../../widgets/giveaway-info";
 import {HowItWorksButton} from "../../entities/button-howitworks";
+import {testContestData} from "../../shared/testData";
+import {DataContestType} from "../../shared/types";
 export const GiveawayPage = () => {
     const [tab, setTab] = useState(0);
-    const data = {
-        prize: 'Название приза',
-        image: 'https://ggdrop.app/public/storage/cases/y4PmPWM3jmDVOOvnKAN8ebOgldla5DjkLbZbZHiO.png'
-    }
+    const data: DataContestType = testContestData
     return (
         <div className={`container ${styles.giveaway}`}>
             <div className={styles.tabs}>

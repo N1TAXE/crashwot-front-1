@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 import {Icon} from "../../../shared/ui/icon";
 import {Button} from "../../../shared/ui/button";
 import {useModalStore} from "../../../app/stores";
-import {ModalSliderType} from "../../../entities/modals/ModalSlider.tsx";
+import {ModalSlider, ModalSliderType} from "../../../entities/modals/ModalSlider.tsx";
 
 export const ProfileLevel = () => {
     const {openModal} = useModalStore()
@@ -32,7 +32,7 @@ export const ProfileLevel = () => {
                     </div>
                 </div>
                 <div className={styles.profileLevelHeaderButtons}>
-                    <Button onClick={() => openModal('user_hiw_level', hiw_level)} icon="question" color="dark" size="small" />
+                    <Button onClick={() => openModal(<ModalSlider data={hiw_level}/>)} icon="question" color="dark" size="small" />
                     <Button icon="arrow" color="blue" size="small">Награды</Button>
                 </div>
             </div>

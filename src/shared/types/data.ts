@@ -1,3 +1,11 @@
+export interface DataContestType {
+    prize: string
+    image: string
+    conditions: {
+        desc: string
+        link?: string
+    }[]
+}
 export interface DataCrashGameType {
     id: string
     bet: DataCrashBetType[]

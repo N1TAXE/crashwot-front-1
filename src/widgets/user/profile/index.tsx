@@ -5,6 +5,7 @@ import { useCopyToClipboard } from 'usehooks-ts';
 import toast from "react-hot-toast";
 import {useModalStore} from "../../../app/stores";
 import {useUserStore} from "../../../app/stores/userStore.tsx";
+import {ModalUserSettings} from "../../../entities/modals";
 export const ProfileUser = () => {
     const [, copy] = useCopyToClipboard();
     const { openModal } = useModalStore();
@@ -24,7 +25,7 @@ export const ProfileUser = () => {
     return (
         <div className={styles.profileUser}>
             <div className={styles.profileUserTop}>
-                <Button onClick={() => openModal('user_settings')} color="dark" icon="cog"/>
+                <Button onClick={() => openModal(<ModalUserSettings />)} color="dark" icon="cog"/>
                 <div className={styles.profileUserTopInfo}>
                     <h4>{user.name}</h4>
                     <div className={styles.profileUserTopInfoStats}>
