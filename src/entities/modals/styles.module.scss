@@ -3,6 +3,14 @@
     max-width: 560px;
     flex: 1 1 0;
     width: 100%;
+    @media screen and (max-width: 580px) {
+      flex: unset;
+      height: calc(100dvh - 20%);
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
 
     &.flexRow {
       display: flex;
@@ -13,6 +21,7 @@
 
     &.deposit {
       max-width: 784px;
+      gap: 24px;
     }
 
     &.contestConditions {
@@ -56,6 +65,82 @@
     width: 100%;
     button {
       flex: 1 1 0;
+    }
+    &Methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      row-gap: 8px;
+
+      &Item {
+        position: relative;
+        min-width: 120px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+        height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 0;
+        &.active {
+          .modalContentMethodsItemBG {
+            background: lighten(#232831, 7%);
+            border: 2px solid var(--color-green);
+          }
+        }
+        &BG {
+          border-radius: 8px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #232831;
+          z-index: 0;
+          transition: background-color ease .3s, border ease .3s;
+          border: 2px solid transparent;
+        }
+        img {
+          z-index: 2;
+        }
+        input {
+          cursor: pointer;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          margin: 0;
+          padding: 0;
+          opacity: 0;
+          z-index: 3;
+        }
+      }
+    }
+    span {
+      &.stats {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 800;
+        color: #949EB0;
+        text-transform: uppercase;
+        p {
+          font-size: 14px;
+          line-height: 16px;
+          font-weight: 600;
+          color: #fff;
+          &.green {
+            color: #92E7A5;
+          }
+          &.yellow {
+            color: #FFD600;
+          }
+        }
+      }
     }
   }
   &Slider {

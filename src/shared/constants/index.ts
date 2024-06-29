@@ -15,9 +15,6 @@ export const PAYMENT_METHODS = [
         name: 'visa'
     },
     {
-        name: 'mastercard'
-    },
-    {
         name: 'qiwi'
     },
     {
