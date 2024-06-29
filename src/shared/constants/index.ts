@@ -9,7 +9,36 @@ export const EXTERNAL_LINKS = {
 
 export const PAYMENT_METHODS = [
     {
-        name: 'yoomoney',
-        icon: ''
+        name: 'yoomoney'
+    },
+    {
+        name: 'visa'
+    },
+    {
+        name: 'mastercard'
+    },
+    {
+        name: 'qiwi'
+    },
+    {
+        name: 'beeline'
+    },
+    {
+        name: 'megaphone'
+    },
+    {
+        name: 'mts'
+    },
+    {
+        name: 'skins'
+    },
+    {
+        name: 'freekassa'
+    },
+    {
+        name: 'tele2'
+    },
+    {
+        name: 'other'
     }
 ]

@@ -3,12 +3,31 @@ export const testContestData = {
     image: 'https://ggdrop.app/public/storage/cases/y4PmPWM3jmDVOOvnKAN8ebOgldla5DjkLbZbZHiO.png',
     conditions: [
         {
-            desc: 'Подписатья на Телеграмм',
+            desc: 'Подписаться на Телеграмм',
             link: 'https://t.me'
         },
         {
-            desc: 'Подписатья на ВК',
+            desc: 'Подписаться на ВК',
             link: 'https://vk.com'
-        }
+        },
+        {
+            desc: 'Подписаться на Ютуб-канал',
+            link: 'https://youtube.com'
+        },
+        {
+            desc: 'Пополнить баланс',
+            stats: 1000,
+            time: 24
+        },
+        {
+            desc: 'Сыграть в крашгейм',
+            stats: 300,
+            time: 24
+        },
+        {
+            desc: 'Открыть любые кейсы',
+            stats: 20,
+            time: 24
+        },
     ]
 }

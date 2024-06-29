@@ -18,6 +18,29 @@
       gap: 8px;
       grid-gap: 8px;
       align-self: stretch;
+      &Item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background: #232831;
+        border-radius: 12px;
+        padding: 16px;
+        h4 {
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 16px;
+        }
+        p {
+          font-size: 12px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 6px;
+          background-color: var(--color-dark-light);
+          border-radius: 6px;
+        }
+      }
     }
     &Header {
       display: flex;

@@ -4,6 +4,8 @@ export interface DataContestType {
     conditions: {
         desc: string
         link?: string
+        stats?: string
+        time?: string
     }[]
 }
 export interface DataCrashGameType {

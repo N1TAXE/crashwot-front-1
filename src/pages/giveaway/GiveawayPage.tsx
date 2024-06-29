@@ -8,6 +8,7 @@ import {GiveawayInfo} from "../../widgets/giveaway-info";
 import {HowItWorksButton} from "../../entities/button-howitworks";
 import {testContestData} from "../../shared/testData";
 import {DataContestType} from "../../shared/types";
+import {Button} from "../../shared/ui/button";
 export const GiveawayPage = () => {
     const [tab, setTab] = useState(0);
     const data: DataContestType = testContestData
@@ -28,6 +29,26 @@ export const GiveawayPage = () => {
                 </div>
             </div>
             <GiveawayInfo data={data}/>
+            <div className={styles.giveawayUsers}>
+                <div className={styles.giveawayUsersHeader}>
+                    <h2>Условия участия</h2>
+                    <span>
+                        0 / {data.conditions.length}
+                    </span>
+                </div>
+                <div className={styles.giveawayUsersList}>
+                    {data.conditions.map((item, index) => (
+                        <div key={index} className={styles.giveawayUsersListItem}>
+                            <h4>{item.desc}</h4>
+                            {item.link ? (
+                                <Button as='a' target="_blank" href={item.link} color="green" size="small">Выполнить</Button>
+                            ):(
+                                <p>0 / {item.stats}</p>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
             <div className={styles.giveawayUsers}>
                 <div className={styles.giveawayUsersHeader}>
                     <h2>Список участников</h2>
