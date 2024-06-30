@@ -6,7 +6,7 @@ import {useCrashStore} from "../../../../app/stores/useCrashStore.tsx";
 export const CrashGameAnimation = () => {
     const {state, setState} = useCrashStore()
     const ctRef = useRef<HTMLElement>(null)
-    const [finalCoef, setFinalCoef] = useState<number>(null)
+    const [finalCoef, setFinalCoef] = useState<number>(9999)
     const [isIncreaseCount, setIsIncreaseCount] = useState<boolean>(false)
     const [ct] = useAnimation({
         ref: ctRef,
@@ -33,6 +33,7 @@ export const CrashGameAnimation = () => {
         if (ct) {
             startCountTimer()
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ct]);
 
     useEffect(() => {
@@ -43,10 +44,11 @@ export const CrashGameAnimation = () => {
             restartCountTimer(1);
             const min = 1.00;
             const max = 10.00;
-            const randomValue = (min + Math.random() * (max - min)).toFixed(2);
+            const randomValue = Number((min + Math.random() * (max - min)).toFixed(2));
             console.log(randomValue)
             setFinalCoef(randomValue);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [count]);
 
     useEffect(() => {
@@ -60,6 +62,7 @@ export const CrashGameAnimation = () => {
                 ct?.setAnimation('start', false)
             }, 5000)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [state, finalCoef, count]);
     
     return (
@@ -68,14 +71,14 @@ export const CrashGameAnimation = () => {
                 {state === 0 ? (
                     <div className={styles.timer}>
                     <span>
-                        {count} сек
+                        {count.toString()} сек
                     </span>
                         До следующей игры
                     </div>
                 ) : (
-                    <div className={`${styles.timer}${count >= finalCoef ? ` ${styles.timerCrash}` : ''}`}>
+                    <div className={`${styles.timer}${Number(count) >= finalCoef ? ` ${styles.timerCrash}` : ''}`}>
                         <span>
-                            x{count}
+                            x{count.toString()}
                         </span>
                         Множитель
                     </div>

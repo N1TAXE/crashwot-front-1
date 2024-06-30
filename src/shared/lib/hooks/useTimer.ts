@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 
-export function useTimer({
+type TimerHookReturnType = [
+        number, // тип таймера, может быть как число, так и строкой в зависимости от decimal
+    () => void,      // startTimer
+    () => void,      // stopTimer
+    (newInitialTime?: number) => void  // restartTimer
+];
+
+export const useTimer = ({
                              initialTime,
                              decimal = 0,
                              isIncrease = false,
@@ -8,7 +15,7 @@ export function useTimer({
     initialTime: number;
     decimal?: number;
     isIncrease?: boolean;
-}) {
+}): TimerHookReturnType => {
     const [time, setTime] = useState<number>(initialTime);
     const [isActive, setIsActive] = useState<boolean>(false);
 
@@ -39,14 +46,12 @@ export function useTimer({
                     return parseFloat((prevTime + 0.01).toFixed(decimal));
                 });
             }, 10);
-        } else {
-            clearInterval(interval);
         }
 
         return () => clearInterval(interval);
     }, [decimal, isIncrease, isActive, initialTime]);
 
-    const timer = time.toFixed(decimal);
+    const timer = Number(time.toFixed(decimal));
 
     if (decimal > 0) return [timer, startTimer, stopTimer, restartTimer];
     return [time, startTimer, stopTimer, restartTimer];

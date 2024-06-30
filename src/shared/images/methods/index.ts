@@ -9,8 +9,10 @@ import tele2 from './tele2.png'
 import visa from './visa.png'
 import yoomoney from './yoomoney.png'
 
-
-export const METHODS = {
+interface Methods {
+    [key: string]: string;
+}
+export const METHODS: Methods = {
     beeline,
     freekassa,
     megaphone,

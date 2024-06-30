@@ -6,9 +6,9 @@ import {Icon, IconTypes} from "../icon";
 
 type ButtonColorTypes = 'blue' | 'red' | 'orange' | 'dark' | 'dark-light' | 'green' | 'green-dark' | 'dashed' | 'lecta' | 'vk' | 'wg' ;
 
-interface ButtonProps<E extends ElementType = ElementType>
-    extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps<E extends ElementType = ElementType> extends ButtonHTMLAttributes<HTMLButtonElement> {
     href?: string;
+    target?: string;
     to?: string;
     icon?: IconTypes;
     iconColor?: string;
@@ -20,7 +20,7 @@ interface ButtonProps<E extends ElementType = ElementType>
 
 const DEFAULT_ELEMENT: ElementType = 'button';
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({children, as, color, size = 'medium', icon, className, ...props}, ref) => {
+export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(({children, as, color, size = 'medium', icon, className, ...props}, ref) => {
 
         const Element = as || DEFAULT_ELEMENT;
 

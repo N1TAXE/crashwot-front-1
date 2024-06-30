@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {UserListCard} from "../../shared/ui/userlist-card";
 import {PATHS} from "../../shared/lib/react-router";
 import {Tab} from "../../entities/tab";
@@ -11,7 +11,12 @@ import {DataContestType} from "../../shared/types";
 import {Button} from "../../shared/ui/button";
 export const GiveawayPage = () => {
     const [tab, setTab] = useState(0);
-    const data: DataContestType = testContestData
+    const [data, setData] = useState<DataContestType>()
+    useEffect(() => {
+        setData(testContestData)
+    }, []);
+
+    if (!data) return <>Loading...</>
     return (
         <div className={`container ${styles.giveaway}`}>
             <div className={styles.tabs}>

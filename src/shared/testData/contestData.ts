@@ -1,4 +1,6 @@
-export const testContestData = {
+import {DataContestType} from "../types";
+
+export const testContestData: DataContestType = {
     prize: 'Название приза',
     image: 'https://ggdrop.app/public/storage/cases/y4PmPWM3jmDVOOvnKAN8ebOgldla5DjkLbZbZHiO.png',
     conditions: [

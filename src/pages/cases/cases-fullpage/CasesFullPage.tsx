@@ -29,7 +29,7 @@ const prize: DataItemType = {
 
 export const CasesFullPage = () => {
     const {user, setUser, setUserBalance} = useUserStore();
-    const [caseData, setCaseData] = useState<DataCaseType>()
+    const [caseData, setCaseData] = useState<DataCaseType | null>(null)
     const [lineItems, setLineItems] = useState<DataItemType[][]>([])
     const [amount, setAmount] = useState<number>(1)
     const [prizes, setPrizes] = useState<DataItemType[]>([])
@@ -40,7 +40,9 @@ export const CasesFullPage = () => {
     const animationLength = 10
 
     useEffect(() => {
-        setCaseData(testCaseData.find(item => item.altName === altName))
+        const sortData = testCaseData.find(item => item.altName === altName)
+        if (!sortData) return
+        setCaseData(sortData)
     }, [altName, caseData]);
 
     useEffect(() => {
@@ -61,6 +63,7 @@ export const CasesFullPage = () => {
     }, [amount, caseData]);
 
     const handleOpen = () => {
+        if (!caseData) return
         const newPrizes = Array.from({ length: amount }, () => prize)
         setPrizes(newPrizes)
 
