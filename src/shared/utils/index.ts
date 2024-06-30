@@ -10,7 +10,6 @@ export function GetRarityName(id: number) {
     }
 }
 
-
 export function getRandomElements<T>(array: T[], count: number): T[] {
     const result: T[] = [];
 
