@@ -26,10 +26,10 @@
   .animation {
     z-index: 9;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    height: 100%;
+    transform: translate(-50%, -60%);
+    height: 125%;
   }
   .road {
     position: absolute;
@@ -65,6 +65,11 @@
       font-weight: 500;
       line-height: 16px;
       text-transform: uppercase;
+      &Crash {
+        span {
+          color: var(--color-red-light);
+        }
+      }
     }
     .stats {
       display: flex;
